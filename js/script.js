@@ -22,12 +22,12 @@ if (null != id_token) {
   });
 }
 
-  lock.on('authenticated', function (authResult) {
-    console.log(authResult);
-    localStorage.setItem('idToken', authResult.idToken);
+lock.on('authenticated', function (authResult) {
+  console.log(authResult);
+  localStorage.setItem('idToken', authResult.idToken);
 
-    showProfile();
-    $('#welcome').hide();
+  showProfile();
+  $('#welcome').hide();
 });
 
 
@@ -97,4 +97,4 @@ function showProfile() {
     $('.nickname').text(profile.nickname);
     $('.avatar').attr('src', profile.picture);
   })
-});
+}
