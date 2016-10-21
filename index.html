@@ -7,16 +7,24 @@
     <script src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdn.auth0.com/js/lock/10.4/lock.min.js"></script>
     <script src="js/script.js" charset="utf-8"></script>
-    <style media='screen'>
   </head>
   <body>
 
-  <h1 id="welcome">Welcome To myUsual! <span id="fullName"></span></h1>
+<!-- Login Button -->
+
+    <h1 id="welcome">Welcome! <span id="fullName"></span></h1>
+    <img class="avatar">
     <br>
     <button type="button" id="btn-login">Click Here To Login</button>
-    <p>Not A Member? Create Account Here!</p>
+    <br>
+    
 
 
+<!-- Logout Button -->
+    <div id="user-info" style="display: none">
+      <h1 id="username"></h1>
+      <button id="logout">Logout</button>
+    </div>
 
 
 
