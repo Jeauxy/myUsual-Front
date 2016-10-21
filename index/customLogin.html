@@ -2,17 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- index.html -->
-    ...
+
 
     <script src="https://cdn.auth0.com/w2/auth0-7.2.min.js"></script>
 
-    ...
-    <title>Custom Login for myUsual</title>
+
+    <title>Custom Login/SignUp for myUsual</title>
   </head>
   <body>
 
-    <!-- index.html -->
+
+
+<!-- CUSTOM SIGN IN AND LOGOUT BUTTONS -->
+
+<button class="btn btn-primary btn-margin" id="btn-login">Log In</button>
+<button class="btn btn-primary btn-margin" id="btn-logout">Log Out</button>
+
+<!-- CUSTOM USER CREATION -->
 
 <form class="form-signin">
   <h2 class="form-signin-heading">Please sign in</h2>
@@ -21,7 +27,20 @@
   <label for="inputPassword" class="sr-only">Password</label>
   <input type="password" id="password" class="form-control" placeholder="Password" required>
   <button class="btn btn-lg btn-default" type="button" id="btn-login">Sign In</button>
+
+
+<!--SIGN UP BUTTON -->
+
+  <button class="btn btn-lg btn-primary" type="button" id="btn-register">Sign Up</button>
+
 </form>
+
+<!-- SOCIAL BUTTON LOGIN -->
+
+
+<button class="btn btn-lg btn-danger" type="button" id="btn-google">Google</button>
+
+
 
 
   </body>

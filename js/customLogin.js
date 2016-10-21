@@ -1,13 +1,24 @@
 // This is a separate js file for custom logins
 
+var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
+    additionalSignUpFields: [{
+      name: "address",                              // required
+      placeholder: "Enter your address",            // required
+      icon: "https://example.com/address_icon.png", // optional
+      validator: function(value) {                  // optional
+        // only accept addresses with more than 10 characters
+        return value.length > 10;
+      }
+    }]
+  });
 
+var showUserProfile = function(profile) {
 
-<!-- index.html -->
-  ...
+  if (profile.hasOwnProperty('user_metadata')) {
+    $('#address').text(profile.user_metadata.address);
+  }
+}
 
-  <script src="https://cdn.auth0.com/w2/auth0-7.2.min.js"></script>
-
-  ...
 
 
 var auth0 = null;
@@ -19,7 +30,7 @@ var auth0 = null;
     callbackURL: 'http://localhost:3000/'
   });
 
-  // app.js
+  // LOGIN EVENT HANDLER FOR CUSTOM LOGIN
 
   $('#btn-login').on('click', function(ev) {
     ev.preventDefault();
@@ -34,6 +45,21 @@ var auth0 = null;
       if (err) alert("something went wrong: " + err.message);
     });
   });
+
+
+var btn_login = $('#btn-login');
+var btn_logout = $('#btn-logout');
+
+
+btn_login.click(function(e) {
+  e.preventDefault();
+  lock.show();
+});
+
+btn_logout.click(function(e) {
+  e.preventDefault();
+  logout();
+});
 
   /* ===== ./app.js ===== */
 ...
@@ -51,7 +77,7 @@ parseHash();
 
 
 
- // app.js for SIGNING IN
+ // app.js for REGISTERING CUSTOM USER
 
  $('#btn-register').on('click', function(ev) {
    ev.preventDefault();
@@ -66,3 +92,14 @@ parseHash();
      if (err) alert("something went wrong: " + err.message);
    });
  });
+
+ // app.js for SOCIAL SIGN IN
+
+$('#btn-google').on('click', function(ev) {
+  ev.preventDefault();
+  auth0.login({
+    connection: 'google-oauth2'
+  }, function(err) {
+    if (err) alert("something went wrong: " + err.message);
+  });
+});

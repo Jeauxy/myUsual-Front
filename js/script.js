@@ -8,6 +8,20 @@ var lock = new
   }
 });
 
+<!-- CHECK SESSION -->
+
+var id_token = localStorage.getItem('id_token');
+
+if (null != id_token) {
+  lock.getProfile(id_token, function (err, profile) {
+    if (err) {
+      // Remove expired token (if any) from localStorage
+      localStorage.removeItem('id_token');
+      return alert('There was an error getting the profile: ' + err.message);
+    } // else: user is authenticated
+  });
+}
+
   lock.on('authenticated', function (authResult) {
     console.log(authResult);
     localStorage.setItem('idToken', authResult.idToken);
@@ -31,6 +45,37 @@ $(document).ready(function () {
 
 
 });
+
+function loadStores() {
+  $.ajax({
+    url: 'http://localhost:3000/stores',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+    }
+  }).done(function (data) {
+    data.forEach(function (datum) {
+      loadStore(datum)
+  })
+})
+}
+
+function loadStore(store) {
+  var li = $('<li />')
+  li.text(store.name + ' ')
+  li.data('id', store._id);
+  if (store.completed){
+    li.addClass('done');
+  }
+  var deleteLink = $('<a />');
+  deleteLink.text('Delete')
+  deleteLink.attr('href','http://localhost:3000/stores/' + store._id)
+  deleteLink.addClass('delete-link')
+
+  li.append(deleteLink)
+
+  $('#stores').append(li);
+}
+
 
 function logout() {
   localStorage.removeItem('idToken')
