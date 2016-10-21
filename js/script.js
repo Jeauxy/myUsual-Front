@@ -12,11 +12,9 @@ var lock = new
     console.log(authResult);
     localStorage.setItem('idToken', authResult.idToken);
 
-
+    showProfile();
     $('#welcome').hide();
 });
-
-
 
 
 $(document).ready(function () {
@@ -34,6 +32,12 @@ $(document).ready(function () {
 
 });
 
+function logout() {
+  localStorage.removeItem('idToken')
+  window.location.href = '/';
+}
+
+
 function showProfile() {
   $('#btn-login').hide();
   $('#user-info').show();
@@ -44,5 +48,8 @@ function showProfile() {
       console.log('profile', profile);
       $('#firstName').text(profile.given_name);
     }
+  // Display user information
+    $('.nickname').text(profile.nickname);
+    $('.avatar').attr('src', profile.picture);
   })
-}
+});
