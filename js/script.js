@@ -33,3 +33,16 @@ $(document).ready(function () {
 
 
 });
+
+function showProfile() {
+  $('#btn-login').hide();
+  $('#user-info').show();
+  lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
+    if (error){
+      logout();
+    } else {
+      console.log('profile', profile);
+      $('#firstName').text(profile.given_name);
+    }
+  })
+}
