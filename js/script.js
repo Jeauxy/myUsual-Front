@@ -48,7 +48,7 @@ $(document).ready(function () {
 
 function loadStores() {
   $.ajax({
-    url: 'http://localhost:3000/stores',
+    url: 'https://boiling-wildwood-13698.herokuapp.com/stores',
     headers: {
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
     }
@@ -69,7 +69,7 @@ function loadStore(store) {
   }
   var deleteLink = $('<a />');
   deleteLink.text('Delete')
-  deleteLink.attr('href','http://localhost:3000/stores/' + store._id)
+  deleteLink.attr('href','https://boiling-wildwood-13698.herokuapp.com/stores' + store._id)
   deleteLink.addClass('delete-link')
 
   li.append(deleteLink)
