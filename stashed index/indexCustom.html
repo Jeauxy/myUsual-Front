@@ -23,9 +23,28 @@
       <button class="btn btn-lg btn-danger" type="button" id="btn-google">Google</button>
     </form>
     <div class="form-signin logged-in">
-      <button class="bton btn-lg btn-default btn-block" type="button" id="btn-logout">Sign out</button>
+      <button class="btn btn-lg btn-default btn-block" type="button" id="btn-logout">Sign out</button>
     </div>
   </div>
+
+  <div id="user-info" style="display: none">
+      <h1 id="username"></h1>
+      <button id="logout">Logout</button>
+
+      <h1>Growler List</h1>
+
+    <form id="new-food-form">
+      <input id="food-name" type="text" name="growl" placeholder="New Food" maxlength="141">
+      <br>
+      <br>
+      <input type="submit" value="Add Food">
+    </form>
+
+    <ul id="foods">
+
+
+    </ul>
+
 <script src="js/script.js"></script>
 </body>
 
