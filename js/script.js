@@ -25,7 +25,7 @@ if (null != id_token) {
 lock.on('authenticated', function (authResult) {
   console.log(authResult);
   localStorage.setItem('idToken', authResult.idToken);
-
+  loadStores();
   showProfile();
   $('#welcome').hide();
 });
@@ -60,6 +60,7 @@ function loadStores() {
 }
 
 function loadStore(store) {
+  console.log(store);
   var li = $('<li />')
   li.text(store.name + ' ')
   li.data('id', store._id);
