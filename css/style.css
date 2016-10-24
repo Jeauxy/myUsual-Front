@@ -37,3 +37,7 @@ body {
 .logged-in {
   display: none;
 }
+
+li {
+list-style-type: none;
+}
