@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>myUsual</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.auth0.com/js/lock/10.4/lock.min.js"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="title">
+    <h1 id="welcome">Welcome To myUsual! <span id="fullname"></span></h1>
+    </div>
+    <br>
+    <div id="button">
+    <button type="button" id="btn-login">Login Here!</button>
+    </div>
+    <div id="user-info" style="display: none">
+      <h1 id="username"></h1>
+      <button id="logout">Logout</button>
+
+      <h1>Food List</h1>
+
+    <form id="new-food-form">
+      <input id="food-name" type="text" name="food" placeholder="New Food" maxlength="141">
+      <br>
+      <br>
+      <input type="submit" value="Add Food">
+    </form>
+
+    <ul id="foods">
+
+
+    </ul>
+
+  <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
+  </body>
+</html>
