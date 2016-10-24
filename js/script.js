@@ -71,6 +71,7 @@ function loadStore(store) {
   li.text(store.name + ' ')
   li.data('id', store._id);
 
+
   // var addFood = $('<a />');
   // addFood.text("Add Food");
   // addFood.attr('href', '#');
@@ -82,7 +83,7 @@ function loadStore(store) {
   // deleteLink.addClass('delete-link')
   //
   // li.append(deleteLink)
-  //
+
   $('#stores').append(li);
 }
 
