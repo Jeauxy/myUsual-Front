@@ -25,7 +25,7 @@ if (null != id_token) {
 lock.on('authenticated', function (authResult) {
   console.log(authResult);
   localStorage.setItem('idToken', authResult.idToken);
-
+  loadStores();
   showProfile();
   $('#welcome').hide();
 });
@@ -42,6 +42,12 @@ $(document).ready(function () {
     e.preventDefault();
     logout();
   });
+
+  $(document).on('click', '.addFoodToStore', function (e) {
+    e.preventDefault();
+
+  })
+
 
 
 });
@@ -60,18 +66,23 @@ function loadStores() {
 }
 
 function loadStore(store) {
+  console.log(store);
   var li = $('<li />')
   li.text(store.name + ' ')
   li.data('id', store._id);
-  if (store.completed){
-    li.addClass('done');
-  }
-  var deleteLink = $('<a />');
-  deleteLink.text('Delete')
-  deleteLink.attr('href','https://boiling-wildwood-13698.herokuapp.com/stores/' + store._id)
-  deleteLink.addClass('delete-link')
 
-  li.append(deleteLink)
+
+  // var addFood = $('<a />');
+  // addFood.text("Add Food");
+  // addFood.attr('href', '#');
+  // addFood.addClass('addFoodToStore');
+  // li.append(addFood);
+  // var deleteLink = $('<a />');
+  // deleteLink.text('Delete')
+  // deleteLink.attr('href','https://boiling-wildwood-13698.herokuapp.com/stores' + store._id)
+  // deleteLink.addClass('delete-link')
+  //
+  // li.append(deleteLink)
 
   $('#stores').append(li);
 }
