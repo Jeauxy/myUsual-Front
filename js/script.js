@@ -1,111 +1,125 @@
-var lock = new
-//1. Client ID, 2. Client Domain, 3. Oject of Attr
-  Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
-    auth: {
-      params: {
-        scope: 'openid email'
-    }
-  }
-});
 
-<!-- CHECK SESSION -->
+// AUTH0 LOCK FOR CUSTOM LOGIN
 
-var id_token = localStorage.getItem('id_token');
+// var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
+//     additionalSignUpFields: [{
+//       name: "address",                              // required
+//       placeholder: "Enter your address",            // required
+//       icon: "https://example.com/address_icon.png", // optional
+//       validator: function(value) {                  // optional
+//         // only accept addresses with more than 10 characters
+//         return value.length > 10;
+//       }
+//     }]
+//   });
+//
+// var showUserProfile = function(profile) {
+//
+//   if (profile.hasOwnProperty('user_metadata')) {
+//     $('#address').text(profile.user_metadata.address);
+//   }
+// }
 
-if (null != id_token) {
-  lock.getProfile(id_token, function (err, profile) {
-    if (err) {
-      // Remove expired token (if any) from localStorage
-      localStorage.removeItem('id_token');
-      return alert('There was an error getting the profile: ' + err.message);
-    } // else: user is authenticated
-  });
-}
-
-lock.on('authenticated', function (authResult) {
-  console.log(authResult);
-  localStorage.setItem('idToken', authResult.idToken);
-  loadStores();
-  showProfile();
-  $('#welcome').hide();
-});
-
-
-$(document).ready(function () {
-
-  $('#btn-login').on('click', function (e) {
-    e.preventDefault();
-    lock.show();
+$(document).ready(function() {
+  var auth0 = null;
+  auth0 = new Auth0({
+    domain: 'jeauxy.auth0.com',
+    clientID: 'GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B',
+    callbackOnLocationHash: true,
+    responseType: 'token',
+    callbackURL: './',
   });
 
-  $('#logout').on('click', function (e) {
+  $('#btn-login').on('click', function(e) {
+    console.log("LOGIN CLICKED");
     e.preventDefault();
-    logout();
+    var username = $('#username').val();
+    var password = $('#password').val();
+    auth0.login({
+      connection: 'Username-Password-Authentication',
+      responseType: 'token',
+      email: username,
+      password: password,
+    }, function(err) {
+      if (err) {
+        alert("something went wrong: " + err.message);
+      } else {
+        show_logged_in(username);
+      }
+    });
   });
 
-  $(document).on('click', '.addFoodToStore', function (e) {
+  $('#btn-register').on('click', function(e) {
+    console.log("SIGN UP CLICKED");
     e.preventDefault();
+    var username = $('#username').val();
+    var password = $('#password').val();
+    auth0.signup({
+      connection: 'Username-Password-Authentication',
+      responseType: 'token',
+      email: username,
+      password: password,
+    }, function(err) {
+      if (err) alert("something went wrong: " + err.message);
+    });
+  });
 
+  $('#btn-google').on('click', function(ev) {
+    console.log("GOOGLE CLICKED");
+    ev.preventDefault();
+    auth0.login({
+      connection: 'google-oauth2'
+    }, function(err) {
+      if (err) alert("something went wrong: " + err.message);
+    });
+  });
+
+  $('#btn-logout').on('click', function(ev) {
+    console.log("LOGOUT CLICKED");
+     ev.preventDefault();
+     localStorage.removeItem('id_token');
+     window.location.href = "/";
   })
 
-
-
-});
-
-function loadStores() {
-  $.ajax({
-    url: 'https://boiling-wildwood-13698.herokuapp.com/stores',
-    headers: {
-      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-    }
-  }).done(function (data) {
-    data.forEach(function (datum) {
-      loadStore(datum)
-  })
-})
-}
-
-function loadStore(store) {
-  console.log(store);
-  var li = $('<li />')
-  li.text(store.name + ' ')
-  li.data('id', store._id);
-
-
-  // var addFood = $('<a />');
-  // addFood.text("Add Food");
-  // addFood.attr('href', '#');
-  // addFood.addClass('addFoodToStore');
-  // li.append(addFood);
-  // var deleteLink = $('<a />');
-  // deleteLink.text('Delete')
-  // deleteLink.attr('href','https://boiling-wildwood-13698.herokuapp.com/stores' + store._id)
-  // deleteLink.addClass('delete-link')
-  //
-  // li.append(deleteLink)
-
-  $('#stores').append(li);
-}
-
-
-function logout() {
-  localStorage.removeItem('idToken')
-  window.location.href = '/';
-}
-
-
-function showProfile() {
-  $('#btn-login').hide();
-  $('#user-info').show();
-  lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
-    if (error){
-      logout();
+  var parseHash = function() {
+    var token = localStorage.getItem('id_token');
+    if (null != token) {
+      show_logged_in();
     } else {
-      console.log('profile', profile);
-      $('#firstName').text(profile.given_name);
+      var result = auth0.parseHash(window.location.hash);
+      if (result && result.idToken) {
+        localStorage.setItem('id_token', result.idToken);
+        show_logged_in();
+      } else if (result && result.error) {
+        alert('error: ' + result.error);
+        show_sign_in();
+      }
     }
-  // Display user information
-    $('.nickname').text(profile.nickname);
-    $('.avatar').attr('src', profile.picture);
-  })
+  };
+
+  parseHash();
+
+});
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://${account.namespace}/dbconnections/signup",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"client_id\": \"GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B\",\"email\": \"$('#signup-email').val()\",\"password\": \"$('#signup-password').val()\",\"user_metadata\": {\"name\": \"john\",\"color\": \"red\"}}"
 }
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+window.auth0 = new Auth0({
+  domain: 'jeauxy.auth0.com',
+  clientID: 'GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B',
+  // Callback made to your server's callback endpoint
+  callbackURL: './',
+});
