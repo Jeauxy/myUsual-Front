@@ -43,6 +43,11 @@ $(document).ready(function () {
     logout();
   });
 
+  $(document).on('click', '.addFoodToStore', function (e) {
+    e.preventDefault();
+
+  })
+
 
 
 });
@@ -66,11 +71,11 @@ function loadStore(store) {
   li.text(store.name + ' ')
   li.data('id', store._id);
 
-  var addFood = $('<a />');
-  addFood.text("Add Food");
-  addFood.attr('href', '#');
-  addFood.addClass('addFoodToStore');
-  li.append(addFood);
+  // var addFood = $('<a />');
+  // addFood.text("Add Food");
+  // addFood.attr('href', '#');
+  // addFood.addClass('addFoodToStore');
+  // li.append(addFood);
   // var deleteLink = $('<a />');
   // deleteLink.text('Delete')
   // deleteLink.attr('href','https://boiling-wildwood-13698.herokuapp.com/stores' + store._id)
