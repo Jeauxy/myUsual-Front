@@ -11,9 +11,9 @@ $(document).ready(function() {
   });
 
   if (isLoggedIn()){
-    loadFoods();
+    loadLists();
     showProfile();
-    addNewFood();
+    addNewList();
     $('#welcome').hide();
   }
 
@@ -47,47 +47,45 @@ function showProfile() {
   })
 }
 
-function addNewFood() {
-  $('#new-food-form').on('submit', function (e) {
+function addNewList() {
+  $('#new-list-form').on('submit', function (e) {
     e.preventDefault()
     $.ajax({
-      url: 'https://boiling-wildwood-13698.herokuapp.com/foods',
+      url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
       method: 'POST',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('idToken')
       },
       data: {
-        text: $('#food-name').val()
+        text: $('#list-name').val()
       }
-    }).done(function (newFood) {
-      loadFood(newFood)
-      $('#food-name').val('').focus()
+    }).done(function (newList) {
+      loadList(newList)
+      $('#list-name').val('').focus()
     })
   })
 }
 
-function loadFoods() {
+function loadLists() {
   $.ajax({
-    url: 'https://boiling-wildwood-13698.herokuapp.com/foods',
+    url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
     headers: {
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
     }
   }).done(function (data) {
     data.forEach(function (datum) {
-      loadFood(datum)
+      loadList(datum)
   })
 })
 }
 
-function loadFood(food) {
+function loadList(list) {
+  console.log(list);
     var li = $('<li />')
-    li.text(itemName.text + ' ')
-    li.data('id', itemName._id);
-    if (itemName.text){
-      li.addClass('done');
-    }
+    li.text(list.listName + ' ')
+    li.data('id', list._id);
 
-    $('#foods').append(li);
+    $('#lists').append(li);
 }
 
 var lock = new
@@ -124,9 +122,9 @@ lock.on('authenticated', function (authResult) {
   console.log(authResult);
   localStorage.setItem('idToken', authResult.idToken);
   console.log('Logged In!');
-  loadFoods();
+  loadLists();
   showProfile();
-  addNewFood();
+  addNewList();
   $('#welcome').hide();
 });
 
