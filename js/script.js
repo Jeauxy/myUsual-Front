@@ -45,7 +45,7 @@ function showProfile() {
       logout();
     } else {
       console.log('profile', profile);
-       ajaxCheck(profile);
+      //  ajaxCheck(profile);
       $('#fullName').text(profile.given_name);
       $('#food-lists h2').data('userId', profile.user_id)
     }
@@ -54,18 +54,28 @@ function showProfile() {
 
 
 
-function ajaxCheck(profile) {
-  $.ajax({
-    url: 'https://boiling-wildwood-13698.herokuapp.com/users/'+profile.user_id
-  }).done(function () {
-    console.log("user already in db");
-    loadLists();
-    return true;
-  }).fail(function () {
-    console.log("user now added to db");
-    addUserToDb(profile);
-    loadLists();
-  })
+function ajaxCheck(authResult) {
+  console.log("ajaxCheck run");
+  lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
+    if (error) {
+      logout();
+    } else {
+
+      console.log(authResult);
+
+      $.ajax({
+        url: 'https://boiling-wildwood-13698.herokuapp.com/users/'+profile.user_id
+      }).done(function () {
+        console.log("user already in db");
+        loadLists();
+        return true;
+      }).fail(function () {
+        console.log("user now added to db");
+        addUserToDb(profile);
+        loadLists();
+      })
+    }
+})
 }
 
 function addUserToDb(profile) {
@@ -165,7 +175,8 @@ lock.on('authenticated', function (authResult) {
   console.log(authResult);
   localStorage.setItem('idToken', authResult.idToken);
   console.log('Logged In!');
-  loadLists();
+  ajaxCheck(authResult);
+  // loadLists();
   showProfile();
   addNewList();
   $('#welcome').hide();
