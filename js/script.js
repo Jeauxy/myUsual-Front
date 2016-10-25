@@ -45,10 +45,50 @@ function showProfile() {
       logout();
     } else {
       console.log('profile', profile);
+       ajaxCheck(profile);
       $('#fullName').text(profile.given_name);
     }
   })
 }
+
+
+
+function ajaxCheck(profile) {
+  $.ajax({
+    url: 'https://boiling-wildwood-13698.herokuapp.com/users/'+profile.user_id
+  }).done(function () {
+    console.log("user already in db");
+    loadLists();
+    return true;
+  }).fail(function () {
+    console.log("user now added to db");
+    addUserToDb(profile);
+    loadLists();
+  })
+}
+
+function addUserToDb(profile) {
+
+  var options = {
+  url: 'https://boiling-wildwood-13698.herokuapp.com/users',
+  method: 'POST',
+  data: {
+    firstName: profile.given_name,
+    lastName: profile.family_name,
+    email: profile.email,
+    userId: profile.user_id
+  },
+  headers: {
+    'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+  }
+}
+$.ajax(options).done(function () {
+  console.log("added user to db");
+}).fail(function (err) {
+  console.log(err);
+})
+}
+
 
 function addNewList() {
   $('#food-lists').on('submit', function (e) {
