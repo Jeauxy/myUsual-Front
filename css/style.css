@@ -4,6 +4,33 @@ body {
     padding-top: 40px;
 }
 
+.table-striped{
+
+}
+
+#table{
+  border-collapse: collapse;
+}
+
+table, tr, td {
+    border: 1px solid black;
+}
+
+
+#lists {
+    font-family: Helvetica;
+    /*display: block;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40%;*/
+    text-align: left;
+    display: flex;
+
+
+}
+
 #button{
   text-align: center;
 }
