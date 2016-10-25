@@ -17,6 +17,7 @@ $(document).ready(function() {
     addNewList();
     $('#welcome').hide();
     $('#home').hide();
+    $('#blank').hide();
   }
 
 });
@@ -40,6 +41,9 @@ function showProfile() {
   $('#btn-login').hide();
   $('#logout').show();
   $('#food-lists').show();
+  $('.col-md-6').show();
+  $('.col-md-3').show();
+  $('#nav').show();
   lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
     if (error){
       logout();
@@ -170,6 +174,7 @@ lock.on('authenticated', function (authResult) {
   addNewList();
   $('#welcome').hide();
   $('#home').hide();
+  $('#blank').hide();
 });
 
 function logout() {
