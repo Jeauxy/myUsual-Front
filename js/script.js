@@ -17,6 +17,7 @@ $(document).ready(function() {
     addNewList();
     $('#welcome').hide();
     $('#home').hide();
+    $('#blank').hide();
   }
 
 });
@@ -129,6 +130,7 @@ lock.on('authenticated', function (authResult) {
   addNewList();
   $('#welcome').hide();
   $('#home').hide();
+  $('#blank').hide();
 });
 
 function logout() {
