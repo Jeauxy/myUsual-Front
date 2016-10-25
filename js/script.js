@@ -6,6 +6,7 @@ $(document).ready(function() {
   });
 
   $('#logout').on('click', function (e) {
+    console.log('clicked');
     e.preventDefault();
     logout();
   });
@@ -36,7 +37,8 @@ function deleteFood(e) {
 
 function showProfile() {
   $('#btn-login').hide();
-  $('#user-info').show();
+  $('#logout').show();
+  $('#food-lists').show();
   lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
     if (error){
       logout();
@@ -48,7 +50,7 @@ function showProfile() {
 }
 
 function addNewList() {
-  $('#new-list-form').on('submit', function (e) {
+  $('#food-lists').on('submit', function (e) {
     e.preventDefault()
     $.ajax({
       url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
