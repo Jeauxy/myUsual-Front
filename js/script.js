@@ -20,6 +20,8 @@ $(document).ready(function() {
     $('#blank').hide();
   }
 $('#new-list-form').on('submit', addNewList);
+$('#foodItemForm').on('submit', submitFood);
+$(document).on('click', 'button.list-group-item', loadListInfo)
 });
 
 function deleteFood(e) {
@@ -122,23 +124,25 @@ function loadStore(stores) {
     $('#foodstoresubmit').append(option);
 }
 // *********** Create new list item
-function addNewList(e) {
+function addNewList() {
+  $('#food-lists').on('submit', function (e) {
     e.preventDefault()
-    var submitdata = {
+    $.ajax({
       url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
       method: 'POST',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-        },
+      },
       data: {
-        listName: $('#list-name').val()
-        }
+        listName: $('#list-name').val(),
+        listOwner: $('#food-lists h2').data('userId')
       }
-    $.ajax(submitdata).done(function (newList) {
+    }).done(function (newList) {
       loadList(newList)
       $('#list-name').val('').focus()
     })
-}
+  })
+};
 
 // *********** Load lists from Mongo
 function loadLists() {
@@ -156,16 +160,109 @@ function loadLists() {
 // *********** Load list item
 function loadList(list) {
   //console.log(list);
-    var button = $('<button type="button" class="list-group-item" />')
-    button.text(list.listName + ' ')
+    var button = $('<button />');
+    button.text(list.listName);
+    button.attr('class', 'list-group-item')
     button.data('id', list._id);
     $('#lists').append(button);
 };
+// *********** Load list information
+function loadListInfo(e){
+  e.preventDefault();
+  var listTitle = $(this).text();
+  var listId = $(this).data('id');
+  $('h2#list-title').text(listTitle);
+  $('h2#list-title').data('id', listId);
+  fetchFoodItems(listId);
+}
 
+function fetchFoodItems(listId){
+  $.ajax({
+    url: 'https://boiling-wildwood-13698.herokuapp.com/foods/' + listId,
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+      }
+    }).done(function (data) {
+      $('#list-content-items').empty();
+      data.forEach(function (datum) {
+        loadFoodItem(datum)
+      })
+  })
+}
+
+function loadFoodItem(item){
+  var fooditemid = item._id;
+  var $itemdiv = $('<div />');
+  var $itemtitle = $('<h3 />');
+  $itemtitle.text(item.itemName);
+  var $itemdescription = $('<p />');
+  $itemdescription.text(item.description);
+  var $itemdetails = $('<p />');
+  $itemdetails.text('Price: ' + item.price + " " + 'Quantity Purchased: ' + item.avgQuantityPurchased);
+  var $itemstorestring = $('<p />')
+  $itemstorestring.attr('id', fooditemid);
+  //$itemstorestring.text('laksdfkasdf');
+  $itemdiv.append($itemtitle);
+  $itemdiv.append($itemdescription);
+  $itemdiv.append($itemdetails);
+  $itemdiv.append($itemstorestring)
+  $('#list-content-items').append($itemdiv);
+  var itemstorelistids = item.stores;
+  itemstorelistids.forEach(function(item){
+    fetchStoreName(item, fooditemid);
+  })
+
+}
+
+function fetchStoreName(storeId, paragraphid){
+  $.ajax({
+    url: 'https://boiling-wildwood-13698.herokuapp.com/stores/' + storeId,
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+      }
+    }).done(function (data) {
+      var storaname = data.name;
+      var storedisplay = $('#' + paragraphid).text();
+      storedisplay = storedisplay + " " + storaname;
+      $('#' + paragraphid).text(storedisplay)
+    })
+}
+
+// *********** Submit food
+function submitFood(e){
+  e.preventDefault();
+  var associatedStores = $('#foodstoresubmit').val();
+  var listId = [];
+  listId.push($('h2#list-title').data('id'));
+  //console.log(listId);
+  var theData = {
+    itemName: $('#itemname').val(),
+    description: $('#itemdescription').val(),
+    price: $('#itemprice').val(),
+    avgQuantityPurchased: $('#quantitypurchased').val(),
+    lists: listId,
+    stores: associatedStores
+  }
+  //console.log('theData', theData);
+  $.ajax({
+    url: 'https://boiling-wildwood-13698.herokuapp.com/foods',
+    method: 'POST',
+    data: JSON.stringify(theData),
+    contentType: 'application/json',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+    }
+  }).done(function (data) {
+    //loadFood(data)
+    loadFoodItem(data);
+  }).fail(function(err, err1, err3){
+    console.log(err, err1, err3);
+  })
+
+}
 // *********** Auth0 lock and login check
-var lock = new
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
-  Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
+var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
     auth: {
       params: {
         scope: 'openid email'
