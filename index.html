@@ -12,41 +12,42 @@
   <body>
     <nav id="nav" style="display: none" class="navbar navbar-default navbar-static-top">
       <div id="main">
-        <h1 id="title">myUsual</h1>
-        <button id="logout" class="btn btn-default btn-md" style="display: none">Logout</button>
+        <h1 id="title"><i>my</i>Usual</h1>
+          <div id="container">
+            <a id="logout" href="#"><input id="input-button" type="button" value="Logout"></a>
+          </div>
       </div>
     </nav>
     <br>
     <div id="blank">
-      <!-------------------- This is A BLANK Div ------------------------->
+<!---------------- THIS IS A BLANK DIV FOR THE LOGIN PAGE ------------------->
     </div>
     <div class="row1">
       <div class="col-md-3">
         <div id="food-lists" style="display: none">
-          <h2>Food List(s)</h2>
+          <h2><i>my</i>Lists</h2>
 
-          <form id="new-list-form">
-            <input id="list-name" type="text" name="list" placeholder="New List" maxlength="141">
-          <br>
-          <br>
-            <input class="btn btn-primary btn-lg" type="submit" value="Add List">
-          </form>
-          <br>
-          <div id="lists" class="list-group-item">
-          <!-- <ul id="lists" class="list-group">
-
-
-          </ul> -->
+            <form id="new-list-form">
+              <input id="list-name" type="text" name="list" placeholder="New List" maxlength="141">
+            <br>
+            <br>
+              <input class="btn btn-primary btn-lg" type="submit" value="Add List">
+            </form>
+            <br>
+            <div id="lists" class="list-group-item">
+<!-------------------- THIS IS WHERE THE LISTS POPULATE --------------------->
+            </div>
         </div>
       </div>
-    </div>
+
       <div class="col-md-6" style="display: none">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        <p><b>THIS WILL BE THE SELECTED LISTS FIELD</b></p>
       </div>
       <div class="col-md-3" style="display: none">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        <p><b>THIS WILL BE THE ADD NEW ITEMS FIELD</b></p>
       </div>
     </div>
+
     <div id="home">
       <div id="title">
         <h1 id="welcome">Welcome To <i>my</i>Usual <span id="fullname"></span></h1>
@@ -59,11 +60,7 @@
         <h1 id="username"></h1>
       </div>
     </div>
-
-
-    </div>
-  <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
   </body>
 </html>
