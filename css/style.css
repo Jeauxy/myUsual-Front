@@ -7,14 +7,6 @@ body {
   background-size: cover;
 }
 
-#welcome{
-  font-family: Helvetica;
-  /*color: white;*/
-  font-size: 40px;
-  padding-top: 40px;
-  font-weight: bold;
-}
-
 h2{
   font-family: Helvetica;
   font-size: 40px;
@@ -24,6 +16,24 @@ h2{
 .list-group-item{
 
   /*color: white;*/
+}
+
+#row1{
+  font-family: Helvetica;
+}
+
+#input-button{
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+}
+
+#welcome{
+  font-family: Helvetica;
+  /*color: white;*/
+  font-size: 40px;
+  padding-top: 40px;
+  font-weight: bold;
 }
 
 #blank{
@@ -36,7 +46,6 @@ h2{
 #home{
   margin:auto;
   text-align: center;
-  /*position: relative;*/
   width: 600px;
   height: 250px;
   background-color: grey;
@@ -45,24 +54,20 @@ h2{
 }
 
 #logout{
-  background-color: red;
-  color: white;
+  font-family: Helvetica;
+  margin-top: 1px;
+  margin-right: 2px;
+  position:absolute;
+  top:0;
+  right:0;
+  color: black;
   float: right;
 }
 
 #lists {
-    background:rgba(255,255,255,0.1);
-    font-family: Helvetica;
-    /*display: block;
-    margin-top: 2em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 40%;*/
-    text-align: left;
-    /*display: flex;*/
-
-
+  font-family: Helvetica;
+  background:rgba(255,255,255,0.1);
+  text-align: left;
 }
 
 #button{
@@ -71,6 +76,8 @@ h2{
 }
 
 #title{
+  font-family: Helvetica;
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -81,5 +88,4 @@ h2{
 #logout{
   display: inline-block;
   align: right;
-  position:
 }

@@ -1,15 +1,15 @@
 $(document).ready(function() {
 
   $('#btn-login').on('click', function (e) {
-    e.preventDefault();
-    lock.show();
-  });
+  e.preventDefault();
+  lock.show();
+});
 
   $('#logout').on('click', function (e) {
-    console.log('clicked');
-    e.preventDefault();
-    logout();
-  });
+  console.log('clicked');
+  e.preventDefault();
+  logout();
+});
 
   if (isLoggedIn()){
     loadLists();
@@ -35,7 +35,7 @@ function deleteFood(e) {
   }).done(function () {
     link.parent('li').remove();
   })
-}
+};
 
 function showProfile() {
   $('#btn-login').hide();
@@ -52,7 +52,7 @@ function showProfile() {
       $('#fullName').text(profile.given_name);
     }
   })
-}
+};
 
 function addNewList() {
   $('#food-lists').on('submit', function (e) {
@@ -71,20 +71,20 @@ function addNewList() {
       $('#list-name').val('').focus()
     })
   })
-}
+};
 
 function loadLists() {
   $.ajax({
     url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
     headers: {
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-    }
-  }).done(function (data) {
-    data.forEach(function (datum) {
+      }
+    }).done(function (data) {
+      data.forEach(function (datum) {
       loadList(datum)
+    })
   })
-})
-}
+};
 
 function loadList(list) {
   console.log(list);
@@ -92,7 +92,7 @@ function loadList(list) {
     button.text(list.listName + ' ')
     button.data('id', list._id);
     $('#lists').append(button);
-}
+};
 
 var lock = new
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
@@ -113,16 +113,14 @@ function isLoggedIn() {
   } else {
     return false;
   }
-}
-
+};
 
 function isJwtValid(token) {
   var token = localStorage.getItem('idToken');
   if (!token){
     return false;
   }
-}
-
+};
 
 lock.on('authenticated', function (authResult) {
   console.log(authResult);
@@ -139,4 +137,4 @@ lock.on('authenticated', function (authResult) {
 function logout() {
     localStorage.removeItem('idToken')
     window.location.href = '/';
-}
+};
