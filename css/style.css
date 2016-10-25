@@ -1,26 +1,24 @@
 body {
   text-align: center;
-  background-image: url("../images/myUsual-bkgd.jpg");
+  /*background-image: url("../images/myUsual-bkgd.jpg");*/
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
 
-h1{
-
+#welcome{
   font-family: Helvetica;
-  color: white;
+  /*color: white;*/
   font-size: 40px;
   padding-top: 40px;
-
   font-weight: bold;
 }
 
 h2{
   font-family: Helvetica;
   font-size: 40px;
-  color: white;
+  /*color: white;*/
 }
 
 .list-group-item{
@@ -36,20 +34,20 @@ h2{
 }
 
 #home{
-  position: relative;;
-  display: inline-block;
+  margin:auto;
+  text-align: center;
+  /*position: relative;*/
   width: 600px;
   height: 250px;
   background-color: grey;
   border-radius: 20px;
   background:rgba(255,255,255,0.2);
-
 }
-
 
 #logout{
   background-color: red;
   color: white;
+  float: right;
 }
 
 #lists {
@@ -80,11 +78,8 @@ h2{
   text-align: center;
 }
 
-#user-logout{
-  text-align: right;
-  padding-bottom: 80px;
-}
-
-li {
-list-style-type: none;
+#logout{
+  display: inline-block;
+  align: right;
+  position:
 }

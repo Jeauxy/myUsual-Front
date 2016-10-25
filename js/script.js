@@ -41,6 +41,9 @@ function showProfile() {
   $('#btn-login').hide();
   $('#logout').show();
   $('#food-lists').show();
+  $('.col-md-6').show();
+  $('.col-md-3').show();
+  $('#nav').show();
   lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
     if (error){
       logout();
