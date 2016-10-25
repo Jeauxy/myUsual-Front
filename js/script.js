@@ -38,6 +38,7 @@ function deleteFood(e) {
 
 function showProfile() {
   $('#btn-login').hide();
+
   $('#logout').show();
   $('#food-lists').show();
   lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
@@ -129,6 +130,7 @@ lock.on('authenticated', function (authResult) {
   showProfile();
   addNewList();
   $('#welcome').hide();
+  $('#home').hide();
 });
 
 function logout() {
