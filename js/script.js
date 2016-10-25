@@ -16,6 +16,7 @@ $(document).ready(function() {
     showProfile();
     addNewList();
     $('#welcome').hide();
+    $('#home').hide();
   }
 
 });
@@ -83,11 +84,11 @@ function loadLists() {
 
 function loadList(list) {
   console.log(list);
-    var li = $('<li />')
-    li.text(list.listName + ' ')
-    li.data('id', list._id);
+    var button = $('<button type="button" class="list-group-item" />')
+    button.text(list.listName + ' ')
+    button.data('id', list._id);
 
-    $('#lists').append(li);
+    $('#lists').append(button);
 }
 
 var lock = new
