@@ -1,21 +1,28 @@
 body {
-    background-color: #eee;
-    padding-bottom: 40px;
-    padding-top: 40px;
-}
-
-.table-striped{
 
 }
 
-#table{
-  border-collapse: collapse;
+h1{
+  font-family: Helvetica;
+  padding-top: 120px;
+  color: black;
+  font-weight: bold;
 }
 
-table, tr, td {
-    border: 1px solid black;
+h2{
+  font-family: Helvetica;
+  font-size: 40px;
 }
 
+#home{
+
+}
+
+
+#logout{
+  background-color: red;
+  color: white;
+}
 
 #lists {
     font-family: Helvetica;
@@ -26,13 +33,14 @@ table, tr, td {
     margin-right: 0;
     padding-left: 40%;*/
     text-align: left;
-    display: flex;
+    /*display: flex;*/
 
 
 }
 
 #button{
   text-align: center;
+  padding-top: 50px;
 }
 
 #title{
@@ -45,6 +53,7 @@ table, tr, td {
 
 #user-logout{
   text-align: right;
+  padding-bottom: 80px;
 }
 
 li {

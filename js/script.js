@@ -16,6 +16,7 @@ $(document).ready(function() {
     showProfile();
     addNewList();
     $('#welcome').hide();
+    $('#home').hide();
   }
 
 });
@@ -37,6 +38,7 @@ function deleteFood(e) {
 
 function showProfile() {
   $('#btn-login').hide();
+
   $('#logout').show();
   $('#food-lists').show();
   lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
@@ -83,11 +85,11 @@ function loadLists() {
 
 function loadList(list) {
   console.log(list);
-    var li = $('<li />')
-    li.text(list.listName + ' ')
-    li.data('id', list._id);
+    var button = $('<button type="button" class="list-group-item" />')
+    button.text(list.listName + ' ')
+    button.data('id', list._id);
 
-    $('#lists').append(li);
+    $('#lists').append(button);
 }
 
 var lock = new
@@ -128,6 +130,7 @@ lock.on('authenticated', function (authResult) {
   showProfile();
   addNewList();
   $('#welcome').hide();
+  $('#home').hide();
 });
 
 function logout() {
