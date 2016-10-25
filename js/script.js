@@ -19,7 +19,6 @@ $(document).ready(function() {
     $('#home').hide();
     $('#blank').hide();
   }
-
 });
 
 function deleteFood(e) {
