@@ -14,11 +14,13 @@ $(document).ready(function() {
   if (isLoggedIn()){
     loadLists();
     showProfile();
-    addNewList();
+    loadStores();
     $('#welcome').hide();
     $('#home').hide();
   }
-
+  $('#new-list-form').on('submit', addNewList);
+  $('#foodItemForm').on('submit', submitFood)
+  //$(document).on()
 });
 
 function deleteFood(e) {
@@ -50,23 +52,22 @@ function showProfile() {
   })
 }
 
-function addNewList() {
-  $('#food-lists').on('submit', function (e) {
+function addNewList(e) {
     e.preventDefault()
-    $.ajax({
+    var submitdata = {
       url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
       method: 'POST',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-      },
+        },
       data: {
-        text: $('#list-name').val()
+        listName: $('#list-name').val()
+        }
       }
-    }).done(function (newList) {
+    $.ajax(submitdata).done(function (newList) {
       loadList(newList)
       $('#list-name').val('').focus()
     })
-  })
 }
 
 function loadLists() {
@@ -74,20 +75,69 @@ function loadLists() {
     url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
     headers: {
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-    }
-  }).done(function (data) {
+      }
+    }).done(function (data) {
     data.forEach(function (datum) {
       loadList(datum)
+    })
   })
-})
 }
 
 function loadList(list) {
-  console.log(list);
     var button = $('<button type="button" class="list-group-item" />')
     button.text(list.listName + ' ')
     button.data('id', list._id);
-    $('#lists').append(button);
+    $('#mylists').append(button);
+}
+
+function loadStores() {
+  $.ajax({
+    url: 'https://boiling-wildwood-13698.herokuapp.com/stores',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+      }
+    }).done(function (data) {
+    var optionsize = data.length;
+    $('#foodstoresubmit').attr('size', optionsize)
+    //console.log(optionsize);
+    data.forEach(function (datum) {
+      loadStore(datum)
+    })
+  })
+}
+
+function submitFood(e){
+  e.preventDefault();
+  var associatedStores = $('#foodstoresubmit').val();
+  var theData = {
+    itemName: $('#itemname').val(),
+    description: $('#itemdescription').val(),
+    price: $('#itemprice').val(),
+    avgQuantityPurchased: $('#quantitypurchased').val(),
+    stores: associatedStores
+  }
+  //console.log('theData', theData);
+  $.ajax({
+    url: 'http://localhost:3000/foods',
+    method: 'POST',
+    data: JSON.stringify(theData),
+    contentType: 'application/json',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+    }
+  }).done(function (data) {
+    //loadFood(data)
+    console.log(data);
+  }).fail(function(err, err1, err3){
+    console.log(err, err1, err3);
+  })
+
+}
+function loadStore(stores) {
+    var option = $('<option />')
+    option.text(stores.name)
+    option.attr('value', stores._id);
+    $('#foodstoresubmit').append(option);
 }
 
 var lock = new
@@ -121,9 +171,9 @@ function isJwtValid(token) {
 
 
 lock.on('authenticated', function (authResult) {
-  console.log(authResult);
+  //console.log(authResult);
   localStorage.setItem('idToken', authResult.idToken);
-  console.log('Logged In!');
+  //console.log('Logged In!');
   loadLists();
   showProfile();
   addNewList();
