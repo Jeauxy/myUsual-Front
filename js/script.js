@@ -38,7 +38,6 @@ function deleteFood(e) {
 
 function showProfile() {
   $('#btn-login').hide();
-
   $('#logout').show();
   $('#food-lists').show();
   lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
@@ -88,7 +87,6 @@ function loadList(list) {
     var button = $('<button type="button" class="list-group-item" />')
     button.text(list.listName + ' ')
     button.data('id', list._id);
-
     $('#lists').append(button);
 }
 
