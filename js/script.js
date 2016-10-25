@@ -68,7 +68,6 @@ function ajaxCheck(authResult) {
       }).done(function () {
         console.log("user already in db");
         loadLists();
-        return true;
       }).fail(function () {
         console.log("user now added to db");
         addUserToDb(profile);
@@ -111,7 +110,8 @@ function addNewList() {
         'Authorization': 'Bearer ' + localStorage.getItem('idToken')
       },
       data: {
-        text: $('#list-name').val()
+        listName: $('#list-name').val(),
+        listOwner: $('#food-lists h2').data('userId')
       }
     }).done(function (newList) {
       loadList(newList)
