@@ -27,7 +27,6 @@ $(document).ready(function() {
 
   $(document).on('click', 'button.list-group-item', loadListInfo);
   $(document).on('click', '.storeclick', selectStore);
-  $(document).on('click', 'button.shared-list-group-item', loadListInfo)
   loadStores();
 });
 
@@ -69,7 +68,6 @@ function ajaxCheck(authResult) {
         console.log("user now added to db");
         addUserToDb(profile);
         loadLists();
-        loadSharedLists();
       })
     }
 })
@@ -170,7 +168,7 @@ function loadSharedLists() {
 function loadSharedList(list) {
   var button = $('<button />');
   button.text(list.listName);
-  button.attr('class', 'shared-list-group-item');
+  button.attr('class', 'list-group-item');
   button.data('id', list._id);
   $('#sharedLists').append(button);
 }
@@ -222,6 +220,7 @@ function fetchFoodItems(listId){
       data.forEach(function (datum) {
         loadFoodItem(datum)
       })
+      addShareListOptions();
   })
 }
 
