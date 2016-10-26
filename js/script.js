@@ -100,7 +100,7 @@ function loadStores() {
       }
     }).done(function (data) {
     var optionsize = data.length;
-    $('#foodstoresubmit').attr('size', optionsize)
+    //$('#foodstoresubmit').attr('size', optionsize)
     //console.log(optionsize);
     data.forEach(function (datum) {
       loadStore(datum)
@@ -108,10 +108,14 @@ function loadStores() {
   })
 }
 function loadStore(stores) {
-    var option = $('<option />')
-    option.text(stores.name)
-    option.attr('value', stores._id);
-    $('#foodstoresubmit').append(option);
+    var p = $('<p />')
+    var input = $('<input type="checkbox" name="storelist" />')
+    var label = $('<label />')
+    label.text(stores.name)
+    input.attr('value', stores._id);
+    p.append(input);
+    p.append(label);
+    $('#foodstoresubmit').append(p);
 }
 // *********** Create new list item
 function addNewList(e) {
@@ -221,7 +225,12 @@ function fetchStoreName(storeId, paragraphid){
     }).done(function (data) {
       var storaname = data.name;
       var storedisplay = $('#' + paragraphid).text();
-      storedisplay = storedisplay + " " + storaname;
+      if (storedisplay === "") {
+        storedisplay = storaname;
+      } else {
+        storedisplay = storedisplay + ", " + storaname;
+      }
+
       $('#' + paragraphid).text(storedisplay)
     })
 }
@@ -229,7 +238,11 @@ function fetchStoreName(storeId, paragraphid){
 // *********** Submit food
 function submitFood(e){
   e.preventDefault();
-  var associatedStores = $('#foodstoresubmit').val();
+  var associatedStores = [];
+  $("input:checkbox[storelist]:checked").each(function(){
+    associatedStores.push($(this).val());
+});
+  //var associatedStores = $('#foodstoresubmit').val();
   var listId = [];
   listId.push($('h2#list-title').data('id'));
   //console.log(listId);
