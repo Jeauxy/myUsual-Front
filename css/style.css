@@ -45,7 +45,14 @@ h2{
 #list-content-items{
   text-align: left;
 }
-
+#foodstoresubmit{
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+}
+#foodstoresubmit p input{
+  margin-right: 20px;
+}
 #input-button{
   background: #13487A;
   color: white;

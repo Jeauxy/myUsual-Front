@@ -241,7 +241,7 @@ function submitFood(e){
   var associatedStores = [];
   $("input:checkbox[storelist]:checked").each(function(){
     associatedStores.push($(this).val());
-});
+  });
   //var associatedStores = $('#foodstoresubmit').val();
   var listId = [];
   listId.push($('h2#list-title').data('id'));
