@@ -10,8 +10,8 @@
   border: 0px;
 }
 .col-md-6{
-  border-left: solid grey 1px;
-  border-right: solid grey 1px;
+  border-left: solid #dedede 1px;
+  border-right: solid #dedede 1px;
 }
 #nav{
   margin-bottom: 0;
