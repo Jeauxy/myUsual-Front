@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
   $('#btn-login').on('click', function (e) {
   e.preventDefault();
   lock.show();
@@ -14,37 +16,27 @@ $(document).ready(function() {
   if (isLoggedIn()){
     loadLists();
     showProfile();
+
     $('#welcome').hide();
     $('#home').hide();
     $('#blank').hide();
+    $('.row-eq-height').show();
   }
   $('#new-list-form').on('submit', addNewList);
   $('#foodItemForm').on('submit', submitFood);
-  $(document).on('click', 'button.list-group-item', loadListInfo)
+
+  $(document).on('click', 'button.list-group-item', loadListInfo);
+  $(document).on('click', '.storeclick', selectStore);
   $(document).on('click', 'button.shared-list-group-item', loadListInfo)
   loadStores();
 });
-
-function deleteFood(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  var link = $(this)
-  $.ajax({
-    url: link.attr('href'),
-    method: 'DELETE',
-    headers: {
-      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-    }
-  }).done(function () {
-    link.parent('li').remove();
-  })
-};
 
 // ********* Show profile information
 function showProfile() {
   $('#btn-login').hide();
   $('#logout').show();
   $('#food-lists').show();
+  $('.row-eq-height').show();
   $('.col-md-6').show();
   $('.col-md-3').show();
   $('#nav').show();
@@ -113,7 +105,7 @@ function loadStores() {
       }
     }).done(function (data) {
     var optionsize = data.length;
-    $('#foodstoresubmit').attr('size', optionsize)
+    //$('#foodstoresubmit').attr('size', optionsize)
     //console.log(optionsize);
     data.forEach(function (datum) {
       loadStore(datum)
@@ -121,10 +113,16 @@ function loadStores() {
   })
 }
 function loadStore(stores) {
-    var option = $('<option />')
-    option.text(stores.name)
-    option.attr('value', stores._id);
-    $('#foodstoresubmit').append(option);
+    var p = $('<p />');
+    var input = $('<input type="checkbox" name="storelist" />');
+    input.attr('class', 'storecheckbox');
+    var label = $('<label />');
+    label.attr('class', 'storeclick');
+    label.text(stores.name);
+    input.attr('value', stores._id);
+    p.append(input);
+    p.append(label);
+    $('#foodstoresubmit').append(p);
 }
 // *********** Create new list item
 function addNewList(e) {
@@ -235,7 +233,7 @@ function loadFoodItem(item){
   var $itemdescription = $('<p />');
   $itemdescription.text(item.description);
   var $itemdetails = $('<p />');
-  $itemdetails.text('Price: ' + item.price + " " + 'Quantity Purchased: ' + item.avgQuantityPurchased);
+  $itemdetails.html('<span class = "bold">Desired price:</span> $' + item.price + '<span class="space"> </span>' + '<span class = "bold">Number needed:</span> ' + item.avgQuantityPurchased);
   var $itemstorestring = $('<p />')
   $itemstorestring.attr('id', fooditemid);
   //$itemstorestring.text('laksdfkasdf');
@@ -260,7 +258,12 @@ function fetchStoreName(storeId, paragraphid){
     }).done(function (data) {
       var storaname = data.name;
       var storedisplay = $('#' + paragraphid).text();
-      storedisplay = storedisplay + " " + storaname;
+      if (storedisplay === "") {
+        storedisplay = storaname;
+      } else {
+        storedisplay = storedisplay + ", " + storaname;
+      }
+
       $('#' + paragraphid).text(storedisplay)
     })
 }
@@ -268,7 +271,12 @@ function fetchStoreName(storeId, paragraphid){
 // *********** Submit food
 function submitFood(e){
   e.preventDefault();
-  var associatedStores = $('#foodstoresubmit').val();
+  var associatedStores = [];
+  $("input:checkbox:checked").each(function(){
+    var store = $(this).val()
+    associatedStores.push(store);
+  });
+  //var associatedStores = $('#foodstoresubmit').val();
   var listId = [];
   listId.push($('h2#list-title').data('id'));
   //console.log(listId);
@@ -292,10 +300,26 @@ function submitFood(e){
   }).done(function (data) {
     //loadFood(data)
     loadFoodItem(data);
+    $('#itemname').val("");
+    $('#itemdescription').val("");
+    $('#itemprice').val("");
+    $('#quantitypurchased').val("");
+    $('#foodstoresubmit').val("");
   }).fail(function(err, err1, err3){
     console.log(err, err1, err3);
   })
 
+}
+function selectStore(e){
+  e.preventDefault();
+  //console.log($(this).parent().find('.storecheckbox').prop('checked', true));
+  if ($(this).parent().find('.storecheckbox').is(':checked')){
+    // console.log('checked');
+    $(this).parent().find('.storecheckbox').prop('checked', false);
+  } else {
+    //console.log('not checked');
+    $(this).parent().find('.storecheckbox').prop('checked', true);
+  }
 }
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
