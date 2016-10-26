@@ -21,6 +21,7 @@ $(document).ready(function() {
   $('#new-list-form').on('submit', addNewList);
   $('#foodItemForm').on('submit', submitFood);
   $(document).on('click', 'button.list-group-item', loadListInfo)
+  $(document).on('click', 'button.shared-list-group-item', loadListInfo)
   loadStores();
 });
 
@@ -71,10 +72,12 @@ function ajaxCheck(authResult) {
       }).done(function () {
         console.log("user already in db");
         loadLists();
+        loadSharedLists();
       }).fail(function () {
         console.log("user now added to db");
         addUserToDb(profile);
         loadLists();
+        loadSharedLists();
       })
     }
 })
@@ -147,6 +150,32 @@ function addNewList(e) {
       console.log("empty");
     }
 };
+
+// ************ Load Shared lists
+function loadSharedLists() {
+    $.ajax({
+      url:'https://boiling-wildwood-13698.herokuapp.com/lists/sharedLists',
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+      }
+    }).done(function (data) {
+      console.log(data);
+      data.forEach(function (datum) {
+        loadSharedList(datum)
+      })
+    })
+
+}
+
+// *********** Load shared list item
+
+function loadSharedList(list) {
+  var button = $('<button />');
+  button.text(list.listName);
+  button.attr('class', 'shared-list-group-item');
+  button.data('id', list._id);
+  $('#sharedLists').append(button);
+}
 
 // *********** Load lists from Mongo
 function loadLists() {
