@@ -206,7 +206,7 @@ function loadFoodItem(item){
   var $itemdescription = $('<p />');
   $itemdescription.text(item.description);
   var $itemdetails = $('<p />');
-  $itemdetails.text('Price: ' + item.price + " " + 'Quantity Purchased: ' + item.avgQuantityPurchased);
+  $itemdetails.html('<span class = "bold">Desired price:</span> $' + item.price + '<span class="space"> </span>' + '<span class = "bold">Number needed:</span> ' + item.avgQuantityPurchased);
   var $itemstorestring = $('<p />')
   $itemstorestring.attr('id', fooditemid);
   //$itemstorestring.text('laksdfkasdf');
@@ -263,6 +263,11 @@ function submitFood(e){
   }).done(function (data) {
     //loadFood(data)
     loadFoodItem(data);
+    $('#itemname').val("");
+    $('#itemdescription').val("");
+    $('#itemprice').val("");
+    $('#quantitypurchased').val("");
+    $('#foodstoresubmit').val("");
   }).fail(function(err, err1, err3){
     console.log(err, err1, err3);
   })
