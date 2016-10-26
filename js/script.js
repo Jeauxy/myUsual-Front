@@ -239,8 +239,9 @@ function fetchStoreName(storeId, paragraphid){
 function submitFood(e){
   e.preventDefault();
   var associatedStores = [];
-  $("input:checkbox[storelist]:checked").each(function(){
-    associatedStores.push($(this).val());
+  $("input:checkbox:checked").each(function(){
+    var store = $(this).val()
+    associatedStores.push(store);
   });
   //var associatedStores = $('#foodstoresubmit').val();
   var listId = [];
