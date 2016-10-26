@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>myUsual</title>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.auth0.com/js/lock/10.4/lock.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/script.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Raleway|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
+
   </head>
   <body>
     <nav id="nav" style="display: none" class="navbar navbar-default navbar-static-top">
@@ -42,37 +42,41 @@
       </div>
 
       <div class="col-md-6" style="display: none">
-        <p><b>THIS WILL BE THE SELECTED LISTS FIELD</b></p>
-        <div id="list-content">
+        <div id="list-placeholder">
+          <h3>Select a list on the left to view contents.</h3>
+        </div>
+        <div id="list-content" class="hidden">
           <h2 id="list-title"></h2>
           <div id="list-content-items"></div>
         </div>
       </div>
       <div class="col-md-3" style="display: none">
-        <p><b>THIS WILL BE THE ADD NEW ITEMS FIELD</b></p>
-        <div id="new-food">
-        <form id="foodItemForm">
-          <p>
-            <input type="text" id="itemname" name="itemname" value="" placeholder="Item name">
-          </p>
-          <p>
-            <input type="text" id="itemdescription" name="itemdescription" value="" placeholder="Item description">
-          </p>
-          <p>
-            <input type="text" id="itemprice" name="itemprice" value="" placeholder="Item price">
-          </p>
-          <p>
-            <input type="text" id="quantitypurchased" name="quantitypurchased" value="" placeholder="Quantity purchased">
-          </p>
-          <p>
-            <select multiple id="foodstoresubmit" class="" name="foodstoresubmit">
-            </select>
-          </p>
-          <p>
-            <input type="submit" id="fooditemsubmit" name="fooditemsubmit">
-          </p>
-        </form>
-      </div>
+        <div id="form-placeholder">
+          <h3>Select a list on the left to add new items.</h3>
+        </div>
+        <div id="new-food" class="hidden">
+          <form id="foodItemForm">
+            <p>
+              <input type="text" id="itemname" name="itemname" value="" placeholder="Item name">
+            </p>
+            <p>
+              <input type="text" id="itemdescription" name="itemdescription" value="" placeholder="Item description">
+            </p>
+            <p>
+              <input type="text" id="itemprice" name="itemprice" value="" placeholder="Desired price">
+            </p>
+            <p>
+              <input type="text" id="quantitypurchased" name="quantitypurchased" value="" placeholder="Number needed">
+            </p>
+            <p>
+              <select multiple id="foodstoresubmit" class="" name="foodstoresubmit">
+              </select>
+            </p>
+            <p>
+              <input type="submit" id="fooditemsubmit" name="fooditemsubmit">
+            </p>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -88,7 +92,9 @@
         <h1 id="username"></h1>
       </div>
     </div>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.auth0.com/js/lock/10.4/lock.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>

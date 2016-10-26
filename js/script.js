@@ -125,24 +125,28 @@ function loadStore(stores) {
     $('#foodstoresubmit').append(option);
 }
 // *********** Create new list item
-function addNewList() {
-  $('#food-lists').on('submit', function (e) {
+function addNewList(e) {
     e.preventDefault()
-    $.ajax({
-      url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-      },
-      data: {
-        listName: $('#list-name').val(),
-        listOwner: $('#food-lists h2').data('userId')
-      }
-    }).done(function (newList) {
-      loadList(newList)
-      $('#list-name').val('').focus()
-    })
-  })
+    var listName = $('#list-name').val();
+    //console.log(listName);
+    if (listName !== '') {
+      $.ajax({
+        url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+          },
+        data: {
+          listName: $('#list-name').val(),
+          listOwner: $('#food-lists h2').data('userId')
+          }
+        }).done(function (newList) {
+        loadList(newList)
+        $('#list-name').val('').focus()
+        })
+    } else {
+      console.log("empty");
+    }
 };
 
 // *********** Load lists from Mongo
@@ -172,6 +176,10 @@ function loadListInfo(e){
   e.preventDefault();
   var listTitle = $(this).text();
   var listId = $(this).data('id');
+  $('#new-food').removeClass('hidden');
+  $('#list-content').removeClass('hidden');
+  $('#list-placeholder').addClass('hidden');
+  $('#form-placeholder').addClass('hidden');
   $('h2#list-title').text(listTitle);
   $('h2#list-title').data('id', listId);
   fetchFoodItems(listId);
@@ -296,7 +304,7 @@ lock.on('authenticated', function (authResult) {
   ajaxCheck(authResult);
   // loadLists();
   showProfile();
-  addNewList();
+  //addNewList();
   $('#welcome').hide();
   $('#home').hide();
   $('#blank').hide();
