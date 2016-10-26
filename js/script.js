@@ -231,7 +231,12 @@ function fetchStoreName(storeId, paragraphid){
     }).done(function (data) {
       var storaname = data.name;
       var storedisplay = $('#' + paragraphid).text();
-      storedisplay = storedisplay + " " + storaname;
+      if (storedisplay === "") {
+        storedisplay = storaname;
+      } else {
+        storedisplay = storedisplay + ", " + storaname;
+      }
+
       $('#' + paragraphid).text(storedisplay)
     })
 }
