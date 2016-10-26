@@ -9,91 +9,92 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Raleway|Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
-    <link rel="stylesheet" href="css/bootstrap-responsive.css">
     <link rel="stylesheet" href="http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css"/>
   </head>
   <body id="body" background="images/myUsual-bkgd.jpg">
-    <nav id="nav" style="display: none" class="navbar navbar-default navbar-static-top">
-      <div id="main">
-        <img id="logo" class="img-circle" src="images/myUsual-logo.jpeg">
-        <h1 id="title"><i>my</i>Usual</h1>
-          <div id="container">
-            <a id="logout" href="#"><input id="input-button" type="button" value="Logout"></a>
+    <div class="container-fluid">
+      <nav id="nav" style="display: none" class="navbar navbar-default navbar-static-top">
+        <div id="main">
+          <img id="logo" class="img-circle" src="images/myUsual-logo.jpeg">
+          <h1 id="title"><i>my</i>Usual</h1>
+            <div id="container">
+              <a id="logout" href="#"><input id="input-button" type="button" value="Logout"></a>
+            </div>
+        </div>
+      </nav>
+      <div id="blank">
+  <!-- ******************** THIS IS A BLANK DIV FOR THE LOGIN PAGE ******************** -->
+      </div>
+      <div class="container-fluid">
+        <div class="row row-eq-height" style="display: none">
+          <div class="col-md-3">
+            <div id="food-lists" style="display: none">
+              <h2 id="header-color">Lists</h2>
+
+                <form id="new-list-form">
+                  <input id="list-name" type="text" name="list" placeholder="New List" maxlength="141">
+                <br>
+                <br>
+                  <input id="listsubmit" class="btn btn-primary btn-lg" type="submit" value="Add List">
+                </form>
+                <br>
+                <div id="lists" class="list-group-item">
+    <!-- ******************** THIS IS WHERE THE LISTS POPULATE ******************** -->
+                </div>
+            </div>
           </div>
-      </div>
-    </nav>
-    <div id="blank">
-<!-- ******************** THIS IS A BLANK DIV FOR THE LOGIN PAGE ******************** -->
-    </div>
-    <div class="row row-eq-height" style="display: none">
-      <div class="col-md-3">
-        <div id="food-lists" style="display: none">
-          <h2 id="header-color">Lists</h2>
-
-            <form id="new-list-form">
-              <input id="list-name" type="text" name="list" placeholder="New List" maxlength="141">
-            <br>
-            <br>
-              <input id="listsubmit" class="btn btn-primary btn-lg" type="submit" value="Add List">
-            </form>
-            <br>
-            <div id="lists" class="list-group-item">
-<!-- ******************** THIS IS WHERE THE LISTS POPULATE ******************** -->
+          <div class="col-md-6" style="display: none">
+            <div id="list-placeholder">
+              <h3>Select a list on the left to view contents.</h3>
             </div>
-        </div>
-      </div>
-
-      <div class="col-md-6" style="display: none">
-        <div id="list-placeholder">
-          <h3>Select a list on the left to view contents.</h3>
-        </div>
-        <div id="list-content" class="hidden">
-          <h2 id="list-title"></h2>
-          <div id="list-content-items"></div>
-        </div>
-      </div>
-      <div class="col-md-3" style="display: none">
-        <div id="form-placeholder">
-          <h3>Select a list on the left to add new items.</h3>
-        </div>
-        <div id="new-food" class="hidden">
-          <h2 id="header-color">New Item</h2>
-          <form id="foodItemForm">
-            <p>
-              <input type="text" id="itemname" name="itemname" value="" placeholder="Item Name">
-            </p>
-            <p>
-              <input type="text" id="itemdescription" name="itemdescription" value="" placeholder="Item Description">
-            </p>
-            <p>
-              <input type="text" id="itemprice" name="itemprice" value="" placeholder="Desired Price">
-            </p>
-            <p>
-              <input type="text" id="quantitypurchased" name="quantitypurchased" value="" placeholder="Quantity Needed">
-            </p>
-            <div id="foodstoresubmit">
-
+            <div id="list-content" class="hidden">
+              <h2 id="list-title"></h2>
+              <div id="list-content-items"></div>
             </div>
-            <p>
-              <input class="btn btn-primary btn-lg" type="submit" id="fooditemsubmit" name="fooditemsubmit">
-            </p>
-          </form>
+          </div>
+          <div class="col-md-3" style="display: none">
+            <div id="form-placeholder">
+              <h3>Select a list on the left to add new items.</h3>
+            </div>
+            <div id="new-food" class="hidden">
+              <h2 id="header-color">New Item</h2>
+              <form id="foodItemForm">
+                <p>
+                  <input type="text" id="itemname" name="itemname" value="" placeholder="Item Name">
+                </p>
+                <p>
+                  <input type="text" id="itemdescription" name="itemdescription" value="" placeholder="Item Description">
+                </p>
+                <p>
+                  <input type="text" id="itemprice" name="itemprice" value="" placeholder="Desired Price">
+                </p>
+                <p>
+                  <input type="text" id="quantitypurchased" name="quantitypurchased" value="" placeholder="Quantity Needed">
+                </p>
+                <div id="foodstoresubmit">
+
+                </div>
+                <p>
+                  <input class="btn btn-primary btn-lg" type="submit" id="fooditemsubmit" name="fooditemsubmit">
+                </p>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div id="home">
-      <div id="title">
-        <h1 id="welcome">Welcome To <i>my</i>Usual <span id="fullname"></span></h1>
+      <div id="home">
+        <div id="title">
+          <h1 id="welcome">Welcome To <i>my</i>Usual <span id="fullname"></span></h1>
+          <br>
+          <img id="logo" class="img-circle" src="images/myUsual-logo.jpeg">
+        </div>
         <br>
-        <img id="logo" class="img-circle" src="images/myUsual-logo.jpeg">
-      </div>
-      <br>
-      <div id="button">
-        <button class="btn btn-primary btn-lg" type="button" id="btn-login">Login Here!</button>
-      </div>
-      <div id="user-info" style="display: none">
-        <h1 id="username"></h1>
+        <div id="button">
+          <button class="btn btn-primary btn-lg" type="button" id="btn-login">Login Here!</button>
+        </div>
+        <div id="user-info" style="display: none">
+          <h1 id="username"></h1>
+        </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>

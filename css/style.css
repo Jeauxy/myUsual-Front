@@ -2,13 +2,26 @@
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
+    display: inline-flex;
 }
 .row-eq-height div{
     background-color: white;
 }
-#logo{
 
+#column-wrap {
+    overflow: hidden;
+}
+
+.col-md-3{
+  background:#fff;
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+.col-md-6{
+  background:#fff;
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
 }
 
 #nav{
@@ -28,12 +41,8 @@ body {
 
 h2{
   font-size: 40px;
-  /*color: white;*/
 }
 
-.list-group-item{
-  /*color: white;*/
-}
 #list-title{
   text-align: center;
   color: #13487A;
@@ -60,7 +69,6 @@ h2{
 }
 
 #welcome{
-  /*color: white;*/
   font-size: 40px;
   padding-top: 40px;
   font-weight: bold;
@@ -84,7 +92,6 @@ h2{
 }*/
 
 #logout{
-
   margin-top: 1px;
   margin-right: 2px;
   position:absolute;
@@ -95,7 +102,6 @@ h2{
 }
 
 #lists {
-
   background:rgba(255,255,255,0.1);
   text-align: left;
 }
