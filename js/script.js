@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
   $('#btn-login').on('click', function (e) {
   e.preventDefault();
   lock.show();
@@ -14,9 +16,11 @@ $(document).ready(function() {
   if (isLoggedIn()){
     loadLists();
     showProfile();
+
     $('#welcome').hide();
     $('#home').hide();
     $('#blank').hide();
+    $('.row-eq-height').show();
   }
   $('#new-list-form').on('submit', addNewList);
   $('#foodItemForm').on('submit', submitFood);
@@ -24,26 +28,12 @@ $(document).ready(function() {
   loadStores();
 });
 
-function deleteFood(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  var link = $(this)
-  $.ajax({
-    url: link.attr('href'),
-    method: 'DELETE',
-    headers: {
-      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-    }
-  }).done(function () {
-    link.parent('li').remove();
-  })
-};
-
 // ********* Show profile information
 function showProfile() {
   $('#btn-login').hide();
   $('#logout').show();
   $('#food-lists').show();
+  $('.row-eq-height').show();
   $('.col-md-6').show();
   $('.col-md-3').show();
   $('#nav').show();

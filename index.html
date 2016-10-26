@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="shortcut icon" href="/images/shopping-cart.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/images/rsz_myusual-flavicon.jpg" type="image/x-icon"/>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/> -->
     <title>myUsual</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Raleway|Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
-
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css"/>
   </head>
-  <body>
+  <body id="body" background="images/myUsual-bkgd.jpg">
     <nav id="nav" style="display: none" class="navbar navbar-default navbar-static-top">
       <div id="main">
+        <img id="logo" class="img-circle" src="images/myUsual-logo.jpeg">
         <h1 id="title"><i>my</i>Usual</h1>
           <div id="container">
             <a id="logout" href="#"><input id="input-button" type="button" value="Logout"></a>
           </div>
       </div>
     </nav>
-    <br>
     <div id="blank">
 <!-- ******************** THIS IS A BLANK DIV FOR THE LOGIN PAGE ******************** -->
     </div>
-    <div class="row1">
+    <div class="row row-eq-height" style="display: none">
       <div class="col-md-3">
         <div id="food-lists" style="display: none">
-          <h2><i>my</i>Lists</h2>
+          <h2 id="header-color">Lists</h2>
 
             <form id="new-list-form">
               <input id="list-name" type="text" name="list" placeholder="New List" maxlength="141">
             <br>
             <br>
-              <input class="btn btn-primary btn-lg" type="submit" value="Add List">
+              <input id="listsubmit" class="btn btn-primary btn-lg" type="submit" value="Add List">
             </form>
             <br>
             <div id="lists" class="list-group-item">
@@ -55,25 +57,25 @@
           <h3>Select a list on the left to add new items.</h3>
         </div>
         <div id="new-food" class="hidden">
-          <h2 id="item-title">New Item</h2>
+          <h2 id="header-color">New Item</h2>
           <form id="foodItemForm">
             <p>
-              <input type="text" id="itemname" name="itemname" value="" placeholder="Item name">
+              <input type="text" id="itemname" name="itemname" value="" placeholder="Item Name">
             </p>
             <p>
-              <input type="text" id="itemdescription" name="itemdescription" value="" placeholder="Item description">
+              <input type="text" id="itemdescription" name="itemdescription" value="" placeholder="Item Description">
             </p>
             <p>
-              <input type="text" id="itemprice" name="itemprice" value="" placeholder="Desired price">
+              <input type="text" id="itemprice" name="itemprice" value="" placeholder="Desired Price">
             </p>
             <p>
-              <input type="text" id="quantitypurchased" name="quantitypurchased" value="" placeholder="Number needed">
+              <input type="text" id="quantitypurchased" name="quantitypurchased" value="" placeholder="Quantity Needed">
             </p>
             <div id="foodstoresubmit">
 
             </div>
             <p>
-              <input class="btn btn-primary" type="submit" id="fooditemsubmit" name="fooditemsubmit">
+              <input class="btn btn-primary btn-lg" type="submit" id="fooditemsubmit" name="fooditemsubmit">
             </p>
           </form>
         </div>
@@ -83,6 +85,8 @@
     <div id="home">
       <div id="title">
         <h1 id="welcome">Welcome To <i>my</i>Usual <span id="fullname"></span></h1>
+        <br>
+        <img id="logo" class="img-circle" src="images/myUsual-logo.jpeg">
       </div>
       <br>
       <div id="button">
