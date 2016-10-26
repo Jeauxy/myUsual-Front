@@ -14,7 +14,6 @@ $(document).ready(function() {
   if (isLoggedIn()){
     loadLists();
     showProfile();
-    loadStores();
     $('#welcome').hide();
     $('#home').hide();
     $('#blank').hide();
@@ -22,7 +21,7 @@ $(document).ready(function() {
   $('#new-list-form').on('submit', addNewList);
   $('#foodItemForm').on('submit', submitFood);
   $(document).on('click', 'button.list-group-item', loadListInfo)
-
+  loadStores();
 });
 
 function deleteFood(e) {
