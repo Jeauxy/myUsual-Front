@@ -25,7 +25,7 @@ $(document).ready(function() {
   $('#new-list-form').on('submit', addNewList);
   $('#foodItemForm').on('submit', submitFood);
   $(document).on('click', 'button.list-group-item', loadListInfo);
-  //$(document).on('click', '.storeclick', selectStore);
+  $(document).on('click', '.storeclick', selectStore);
   loadStores();
 });
 
@@ -109,12 +109,12 @@ function loadStores() {
   })
 }
 function loadStore(stores) {
-    var p = $('<p />')
-    p.attr('class', 'storeclick')
-    var input = $('<input type="checkbox" name="storelist" />')
-    input.attr('class', 'storecheckbox')
-    var label = $('<label />')
-    label.text(stores.name)
+    var p = $('<p />');
+    var input = $('<input type="checkbox" name="storelist" />');
+    input.attr('class', 'storecheckbox');
+    var label = $('<label />');
+    label.attr('class', 'storeclick');
+    label.text(stores.name);
     input.attr('value', stores._id);
     p.append(input);
     p.append(label);
@@ -280,17 +280,17 @@ function submitFood(e){
   })
 
 }
-// function selectStore(e){
-//   e.preventDefault();
-//   //console.log($(this));
-//   if ($(this).find('.storecheckbox').prop('checked', true)){
-//     // console.log('checked');
-//     $(this).find('.storecheckbox').prop('checked', false);
-//   } else {
-//     console.log('not checked');
-//     //$(this).find('.storecheckbox').is(':checked');
-//   }
-// }
+function selectStore(e){
+  e.preventDefault();
+  //console.log($(this).parent().find('.storecheckbox').prop('checked', true));
+  if ($(this).parent().find('.storecheckbox').is(':checked')){
+    // console.log('checked');
+    $(this).parent().find('.storecheckbox').prop('checked', false);
+  } else {
+    //console.log('not checked');
+    $(this).parent().find('.storecheckbox').prop('checked', true);
+  }
+}
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
 var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
