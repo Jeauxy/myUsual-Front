@@ -7,10 +7,9 @@
 }
 
 .bordernone{
-
+  border: 0px;
 }
 .col-md-6{
-<<<<<<< Updated upstream
   border-left: solid #dedede 1px;
   border-right: solid #dedede 1px;
 }
@@ -18,7 +17,12 @@
   margin-bottom: 0;
   background: rgba(255,255,255,.1);
 }
-
+.bold{
+  font-weight: bold;
+}
+.space{
+  margin: 0px 10px;
+}
 body {
   text-align: center;
   background-repeat: no-repeat;
