@@ -13,16 +13,25 @@
   border-left: solid #dedede 1px;
   border-right: solid #dedede 1px;
 }
+
+#main{
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
 #nav{
   margin-bottom: 0;
   background: rgba(255,255,255,.1);
 }
+
 .bold{
   font-weight: bold;
 }
+
 .space{
   margin: 0px 10px;
 }
+
 body {
   text-align: center;
   background-repeat: no-repeat;
@@ -44,17 +53,21 @@ h2{
 #header-color{
   color: #13487A;
 }
+
 #list-content-items{
   text-align: left;
 }
+
 #foodstoresubmit{
   display: inline-block;
   width: 150px;
   text-align: left;
 }
+
 #foodstoresubmit p input{
   margin-right: 20px;
 }
+
 #input-button{
   background: #13487A;
   color: white;
@@ -98,6 +111,7 @@ h2{
   color: #43ABEA;
   font-weight: bolder;
   text-align: center;
+  font-size: 50px;
 }
 
 #btn-login{
