@@ -8,8 +8,8 @@
     <title>myUsual</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|Raleway|Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
     <link rel="stylesheet" href="http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css"/>
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title">
   </head>
   <body id="body" background="images/myUsual-bkgd.jpg">
     <div class="container-fluid">
@@ -21,7 +21,7 @@
               <a id="logout" href="#"><input id="input-button" type="button" value="Logout"></a>
             </div>
             <div id="sharedLists">
-              
+
             </div>
         </div>
       </nav>
@@ -29,8 +29,8 @@
   <!-- ******************** THIS IS A BLANK DIV FOR THE LOGIN PAGE ******************** -->
       </div>
       <div class="container-fluid">
-        <div class="row row-eq-height" style="display: none">
-          <div class="col-md-3">
+        <div class="row" style="display: none">
+          <div class="col-md-3 bordernone">
             <div id="food-lists" style="display: none">
               <h2 id="header-color">Lists</h2>
 
@@ -44,9 +44,13 @@
                 <div id="lists" class="list-group-item">
     <!-- ******************** THIS IS WHERE THE LISTS POPULATE ******************** -->
                 </div>
+                <div id="sharedLists" class="list-group-item">
+
+    <!-- ******************** THIS IS WHERE THE LISTS POPULATE ******************** -->
+                </div>
             </div>
           </div>
-          <div class="col-md-6" style="display: none">
+          <div class="col-md-6 bordernone" style="display: none">
             <div id="list-placeholder">
               <h3>Select a list on the left to view contents.</h3>
             </div>
@@ -55,7 +59,7 @@
               <div id="list-content-items"></div>
             </div>
           </div>
-          <div class="col-md-3" style="display: none">
+          <div class="col-md-3 bordernone" style="display: none">
             <div id="form-placeholder">
               <h3>Select a list on the left to add new items.</h3>
             </div>
