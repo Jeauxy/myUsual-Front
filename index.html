@@ -21,7 +21,7 @@
     </nav>
     <br>
     <div id="blank">
-<!---------------- THIS IS A BLANK DIV FOR THE LOGIN PAGE ------------------->
+<!-- ******************** THIS IS A BLANK DIV FOR THE LOGIN PAGE ******************** -->
     </div>
     <div class="row1">
       <div class="col-md-3">
@@ -36,16 +36,43 @@
             </form>
             <br>
             <div id="lists" class="list-group-item">
-<!-------------------- THIS IS WHERE THE LISTS POPULATE --------------------->
+<!-- ******************** THIS IS WHERE THE LISTS POPULATE ******************** -->
             </div>
         </div>
       </div>
 
       <div class="col-md-6" style="display: none">
         <p><b>THIS WILL BE THE SELECTED LISTS FIELD</b></p>
+        <div id="list-content">
+          <h2 id="list-title"></h2>
+          <div id="list-content-items"></div>
+        </div>
       </div>
       <div class="col-md-3" style="display: none">
         <p><b>THIS WILL BE THE ADD NEW ITEMS FIELD</b></p>
+        <div id="new-food">
+        <form id="foodItemForm">
+          <p>
+            <input type="text" id="itemname" name="itemname" value="" placeholder="Item name">
+          </p>
+          <p>
+            <input type="text" id="itemdescription" name="itemdescription" value="" placeholder="Item description">
+          </p>
+          <p>
+            <input type="text" id="itemprice" name="itemprice" value="" placeholder="Item price">
+          </p>
+          <p>
+            <input type="text" id="quantitypurchased" name="quantitypurchased" value="" placeholder="Quantity purchased">
+          </p>
+          <p>
+            <select multiple id="foodstoresubmit" class="" name="foodstoresubmit">
+            </select>
+          </p>
+          <p>
+            <input type="submit" id="fooditemsubmit" name="fooditemsubmit">
+          </p>
+        </form>
+      </div>
       </div>
     </div>
 
