@@ -20,6 +20,7 @@ $(document).ready(function() {
     $('#welcome').hide();
     $('#home').hide();
     $('#blank').hide();
+    $('.row-eq-height').show();
   }
   $('#new-list-form').on('submit', addNewList);
   $('#foodItemForm').on('submit', submitFood);
@@ -32,6 +33,7 @@ function showProfile() {
   $('#btn-login').hide();
   $('#logout').show();
   $('#food-lists').show();
+  $('.row-eq-height').show();
   $('.col-md-6').show();
   $('.col-md-3').show();
   $('#nav').show();

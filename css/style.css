@@ -4,6 +4,15 @@
     display: -ms-flexbox;
     display: flex;
 }
+.row-eq-height div{
+    background-color: white;
+}
+#logo{
+  
+}
+#nav{
+  margin-bottom: 0;
+}
 
 body {
   text-align: center;
@@ -16,7 +25,6 @@ body {
 }
 
 h2{
-
   font-size: 40px;
   /*color: white;*/
 }
@@ -27,8 +35,8 @@ h2{
 #list-title{
   text-align: center;
 }
-#list-content{
-  text-align: center;
+#list-content-items{
+  text-align: left;
 }
 
 #input-button{
