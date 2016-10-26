@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
   $('#btn-login').on('click', function (e) {
   e.preventDefault();
   lock.show();
@@ -14,6 +16,7 @@ $(document).ready(function() {
   if (isLoggedIn()){
     loadLists();
     showProfile();
+
     $('#welcome').hide();
     $('#home').hide();
     $('#blank').hide();
@@ -23,21 +26,6 @@ $(document).ready(function() {
   $(document).on('click', 'button.list-group-item', loadListInfo)
   loadStores();
 });
-
-function deleteFood(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  var link = $(this)
-  $.ajax({
-    url: link.attr('href'),
-    method: 'DELETE',
-    headers: {
-      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-    }
-  }).done(function () {
-    link.parent('li').remove();
-  })
-};
 
 // ********* Show profile information
 function showProfile() {
