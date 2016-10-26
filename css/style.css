@@ -17,6 +17,9 @@ h2{
 .list-group-item{
   /*color: white;*/
 }
+#list-title{
+  text-align: center;
+}
 #list-content{
   text-align: left;
 }
