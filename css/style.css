@@ -7,9 +7,10 @@
 }
 
 .bordernone{
-  border: 0px;
+
 }
 .col-md-6{
+<<<<<<< Updated upstream
   border-left: solid #dedede 1px;
   border-right: solid #dedede 1px;
 }
@@ -68,16 +69,6 @@ h2{
   width: 600px;
   height: 125px;
 }
-
-/*#home{
-  margin:auto;
-  text-align: center;
-  width: 600px;
-  height: 250px;
-  background-color: grey;
-  border-radius: 20px;
-  background:rgba(255,255,255,0.2);
-}*/
 
 #logout{
   margin-top: 1px;
