@@ -70,7 +70,7 @@ h2{
 #listsharecontent{
   border: solid #dedede 1px;
 }
-#foodstoresubmit p input, #users-list p input{
+#foodstoresubmit p input, #user-list-form p input{
   margin-right: 20px;
 }
 
