@@ -3,7 +3,7 @@
 
 <h2>myUsual Homepage</h2>
 
-<h2>Product Description<h2>
+<h2>Product Description:<h2>
 
 <p> Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure thats a unanimous <b><i>YES!</i></b>.</p>
 <br>
@@ -30,7 +30,7 @@
 
 
 
-<h2>Before and After</h2>
+<h2>Before and After:</h2>
 
 
 <h3>OG Start</h3>
@@ -77,7 +77,7 @@
 
 
 
-<h2>User Stories</h2>
+<h2>User Stories:</h2>
 
 <h3>Trello</h3>
 
