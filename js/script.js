@@ -304,7 +304,8 @@ function submitFood(e){
     $('#itemdescription').val("");
     $('#itemprice').val("");
     $('#quantitypurchased').val("");
-    $('#foodstoresubmit').val("");
+    //$('#foodstoresubmit').val("");
+    $('.storecheckbox').prop('checked', false);
   }).fail(function(err, err1, err3){
     console.log(err, err1, err3);
   })
