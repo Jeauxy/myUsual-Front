@@ -26,6 +26,7 @@ $(document).ready(function() {
 
   $(document).on('click', 'button.list-group-item', loadListInfo);
   $(document).on('click', '.storeclick', selectStore);
+  $('#user-list-form').on('submit', shareList)
   loadStores();
   loadUsers();
 });
@@ -364,7 +365,7 @@ function loadUsers() {
   })
 };
 
-// *********** Load list item
+// *********** Load User item
 function loadUser(user) {
     var p = $('<p />');
     var input = $('<input type="checkbox" name="userlist" />');
@@ -375,8 +376,18 @@ function loadUser(user) {
     input.attr('value', user._id);
     p.append(input);
     p.append(label);
-    $('#users-list').append(p);
+    $('#user-list-form').prepend(p);
 };
+// *********** Share List functions
+function shareList(e){
+  e.preventDefault();
+  var sharedUsers = [];
+  $("input.usercheckbox:checkbox:checked").each(function(){
+    var user = $(this).val()
+    sharedUsers.push(user);
+  });
+  console.log(sharedUsers);
+}
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
 var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
