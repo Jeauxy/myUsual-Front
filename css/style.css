@@ -28,9 +28,14 @@ h2{
 .list-food-item:last-of-type{
   border-bottom: 0px;
 }
-#listsharecontent{
-  text-align: left;
+
+.list-food-item .delete-link{
+  margin: 0px 0px 10px 20px;
+  font-size: 12px;
+  float: right;
+  color: #990000;
 }
+
 .row{
   background-color: white;
 }
@@ -69,7 +74,9 @@ h2{
 }
 #listsharecontent{
   border: solid #dedede 1px;
+  text-align: left;
 }
+
 #foodstoresubmit p input, #user-list-form p input{
   margin-right: 20px;
 }
@@ -89,6 +96,19 @@ h2{
 #footer-content{
   color: white;
   text-align: center;
+}
+
+#firstName{
+  color: white;
+  display: inline-block;
+  align: right;
+  margin-top: 1px;
+  margin-right: 2px;
+  position:absolute;
+  top:0;
+  right:0;
+  float: right;
+  padding: 5px 80px 0px 0px;
 }
 
 #header-color{
@@ -149,10 +169,4 @@ h2{
 
 #welcome{
   padding-top: 85px;
-}
-.list-food-item .delete-link{
-  margin: 0px 0px 10px 20px;
-  font-size: 12px;
-  float: right;
-  color: #990000;
 }
