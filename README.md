@@ -1,8 +1,6 @@
 # myUsual
 
 
-<h2>myUsual Homepage</h2>
-
 <h2><b>Product Description:</b><h2>
 
 <p>Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure thats a unanimous <b><i>YES!</i></b>.</p>
@@ -20,8 +18,8 @@
 <br>
 <br>
 Feel free to contact us via: [contact.myusual@gmail.com](mailto:)
-
-
+<br>
+<br>
 <h2><b>Technologies We used to build this app:</b></h2>
 
 <h4>-Express.js</h4>
@@ -34,9 +32,8 @@ Feel free to contact us via: [contact.myusual@gmail.com](mailto:)
 <h4>-Bootstrap</h4>
 <h4>-Trello</h4>
 <h4>-Lots & LOTS of Starbucks</h4>
-
-
-
+<br>
+<br>
 <h2><b>Before and After:</b></h2>
 
 
@@ -59,16 +56,16 @@ Feel free to contact us via: [contact.myusual@gmail.com](mailto:)
 <h4>Main App Page</h4>
 
 <a href="http://imgur.com/MFolMW2"><img src="http://i.imgur.com/MFolMW2.png" title="source: imgur.com" /></a>
-
-
-
+<br>
+<br>
 <h2><b>We're Responsive Too!</b></h2>
 
 <a href="http://imgur.com/vo0L430"><img src="http://i.imgur.com/vo0L430.png" title="source: imgur.com" /></a>
-
-
-
-<h2></b>Wireframes:</b></h2>
+<br>
+<a href="http://imgur.com/OZfvu6k"><img src="http://i.imgur.com/OZfvu6k.jpg" title="source: imgur.com" /></a>
+<br>
+<br>
+<h2><b>Wireframes:</b></h2>
 
 <h3>Login Page:</h3>
 
@@ -81,9 +78,8 @@ Feel free to contact us via: [contact.myusual@gmail.com](mailto:)
 <h3>Main App Page:</h3>
 
 <a href="http://imgur.com/Rv35pgP"><img src="http://i.imgur.com/Rv35pgP.png" title="source: imgur.com" /></a>
-
-
-
+<br>
+<br>
 <h2><b>User Stories:</b></h2>
 
 <h3>Trello</h3>
