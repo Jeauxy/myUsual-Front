@@ -50,6 +50,7 @@ function showProfile() {
     }
   })
 };
+
 // ***** Check to see if profile exists
 function ajaxCheck(authResult) {
   console.log("ajaxCheck run");
@@ -72,6 +73,7 @@ function ajaxCheck(authResult) {
     }
   })
 };
+
 // ***** Retrieve profile information from Mongo
 function addUserToDb(profile) {
   var options = {
@@ -124,6 +126,7 @@ function loadStore(stores) {
     p.append(label);
     $('#foodstoresubmit').append(p);
 };
+
 // *********** Create new list item
 function addNewList(e) {
     e.preventDefault()
@@ -149,7 +152,6 @@ function addNewList(e) {
     }
 };
 
-
 // *********** Load lists from Mongo
 function loadLists() {
   $.ajax({
@@ -163,6 +165,7 @@ function loadLists() {
     })
   })
 };
+
 // *********** Load list item
 function loadList(list) {
   //console.log(list);
@@ -198,7 +201,6 @@ function loadSharedList(list) {
   $('#sharedLists').append(button);
 };
 
-<<<<<<< HEAD
 // *********** Load lists from Mongo
 function loadLists() {
   $.ajax({
@@ -223,8 +225,6 @@ function loadList(list) {
     $('#lists').append(button);
 };
 
-=======
->>>>>>> 108760c4d7c6cc1f187b776bb9f56f26cd9be673
 // *********** Load list information
 function loadListInfo(e){
   e.preventDefault();
