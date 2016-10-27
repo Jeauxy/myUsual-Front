@@ -70,8 +70,8 @@ function ajaxCheck(authResult) {
         loadLists();
       })
     }
-})
-}
+  })
+};
 // ***** Retrieve profile information from Mongo
 function addUserToDb(profile) {
   var options = {
@@ -87,14 +87,14 @@ function addUserToDb(profile) {
     'Authorization': 'Bearer ' + localStorage.getItem('idToken')
   }
 }
-$.ajax(options).done(function () {
-  console.log("added user to db");
-}).fail(function (err) {
-  console.log(err);
-})
-}
-// *********** Load stores into create food item form
+  $.ajax(options).done(function () {
+    console.log("added user to db");
+  }).fail(function (err) {
+    console.log(err);
+  })
+};
 
+// *********** Load stores into create food item form
 function loadStores() {
   $.ajax({
     url: 'https://boiling-wildwood-13698.herokuapp.com/stores',
@@ -109,7 +109,9 @@ function loadStores() {
       loadStore(datum)
     })
   })
-}
+};
+
+// *********** Load Store
 function loadStore(stores) {
     var p = $('<p />');
     var input = $('<input type="checkbox" name="storelist" />');
@@ -121,7 +123,7 @@ function loadStore(stores) {
     p.append(input);
     p.append(label);
     $('#foodstoresubmit').append(p);
-}
+};
 // *********** Create new list item
 function addNewList(e) {
     e.preventDefault()
@@ -173,19 +175,18 @@ function loadList(list) {
 
 // ************ Load Shared lists
 function loadSharedLists() {
-    $.ajax({
-      url:'https://boiling-wildwood-13698.herokuapp.com/lists/sharedLists',
-      headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-      }
-    }).done(function (data) {
-      console.log(data);
-      data.forEach(function (datum) {
-        loadSharedList(datum)
-      })
+  $.ajax({
+    url:'https://boiling-wildwood-13698.herokuapp.com/lists/sharedLists',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+    }
+  }).done(function (data) {
+    console.log(data);
+    data.forEach(function (datum) {
+      loadSharedList(datum)
     })
-
-}
+  })
+};
 
 // *********** Load shared list item
 
@@ -195,8 +196,35 @@ function loadSharedList(list) {
   button.attr('class', 'list-group-item');
   button.data('id', list._id);
   $('#sharedLists').append(button);
-}
+};
 
+<<<<<<< HEAD
+// *********** Load lists from Mongo
+function loadLists() {
+  $.ajax({
+    url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+      }
+    }).done(function (data) {
+      data.forEach(function (datum) {
+      loadList(datum)
+    })
+  })
+};
+
+// *********** Load list item
+function loadList(list) {
+  //console.log(list);
+    var button = $('<button />');
+    button.text(list.listName);
+    button.attr('class', 'list-group-item')
+    button.data('id', list._id);
+    $('#lists').append(button);
+};
+
+=======
+>>>>>>> 108760c4d7c6cc1f187b776bb9f56f26cd9be673
 // *********** Load list information
 function loadListInfo(e){
   e.preventDefault();
@@ -209,7 +237,7 @@ function loadListInfo(e){
   $('h2#list-title').text(listTitle);
   $('h2#list-title').data('id', listId);
   fetchFoodItems(listId);
-}
+};
 
 function fetchFoodItems(listId){
   $.ajax({
@@ -224,7 +252,7 @@ function fetchFoodItems(listId){
       })
       addShareListOptions();
   })
-}
+};
 
 function loadFoodItem(item){
   var fooditemid = item._id;
@@ -247,8 +275,7 @@ function loadFoodItem(item){
   itemstorelistids.forEach(function(item){
     fetchStoreName(item, fooditemid);
   })
-
-}
+};
 
 function fetchStoreName(storeId, paragraphid){
   $.ajax({
@@ -267,7 +294,7 @@ function fetchStoreName(storeId, paragraphid){
 
       $('#' + paragraphid).text(storedisplay)
     })
-}
+};
 
 // *********** Submit food
 function submitFood(e){
@@ -309,8 +336,8 @@ function submitFood(e){
   }).fail(function(err, err1, err3){
     console.log(err, err1, err3);
   })
+};
 
-}
 function selectStore(e){
   e.preventDefault();
   //console.log($(this).parent().find('.storecheckbox').prop('checked', true));
@@ -321,7 +348,8 @@ function selectStore(e){
     //console.log('not checked');
     $(this).parent().find('.storecheckbox').prop('checked', true);
   }
-}
+};
+
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
 var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
@@ -364,6 +392,6 @@ lock.on('authenticated', function (authResult) {
 });
 
 function logout() {
-    localStorage.removeItem('idToken')
-    window.location.href = '/';
+  localStorage.removeItem('idToken')
+  window.location.href = '/';
 };
