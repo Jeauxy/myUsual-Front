@@ -22,7 +22,15 @@ h2{
   border-left: solid #dedede 1px;
   border-right: solid #dedede 1px;
 }
-
+.list-food-item{
+  border-bottom: solid #dedede 1px;
+}
+.list-food-item:last-of-type{
+  border-bottom: 0px;
+}
+#listsharecontent{
+  text-align: left;
+}
 .row{
   background-color: white;
 }
@@ -56,8 +64,13 @@ h2{
   width: 150px;
   text-align: left;
 }
-
-#foodstoresubmit p input{
+#listsharecontent, #users-list{
+  padding: 10px;
+}
+#listsharecontent{
+  border: solid #dedede 1px;
+}
+#foodstoresubmit p input, #users-list p input{
   margin-right: 20px;
 }
 
@@ -102,7 +115,7 @@ h2{
   text-align: left;
 }
 
-#listsubmit{
+#listsubmit, #btn-share{
   background: #43ABEA;
 }
 
