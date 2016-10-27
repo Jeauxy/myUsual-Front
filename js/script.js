@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-
   $('#btn-login').on('click', function (e) {
   e.preventDefault();
   lock.show();
@@ -21,6 +19,7 @@ $(document).ready(function() {
     $('#home').hide();
     $('#blank').hide();
     $('.row').show();
+    $('#footer').show();
   }
   $('#new-list-form').on('submit', addNewList);
   $('#foodItemForm').on('submit', submitFood);
@@ -40,6 +39,7 @@ function showProfile() {
   $('.col-md-6').show();
   $('.col-md-3').show();
   $('#nav').show();
+  $('#footer').show();
   lock.getProfile(localStorage.getItem('idToken'), function (error, profile) {
     if (error){
       logout();
