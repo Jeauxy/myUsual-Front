@@ -150,3 +150,9 @@ h2{
 #welcome{
   padding-top: 85px;
 }
+.list-food-item .delete-link{
+  margin: 0px 0px 10px 20px;
+  font-size: 12px;
+  float: right;
+  color: #990000;
+}
