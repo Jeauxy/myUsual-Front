@@ -27,6 +27,7 @@ $(document).ready(function() {
 
   $(document).on('click', 'button.list-group-item', loadListInfo);
   $(document).on('click', '.storeclick', selectStore);
+  $(document).on('click', 'a.deleteLink', deleteListItem);
   $('#user-list-form').on('submit', shareList)
   loadStores();
   loadUsers();
@@ -265,7 +266,7 @@ function loadFoodItem(item){
   $itemtitle.text(item.itemName);
   var $deleteLink = $('<a />');
   $deleteLink.text('Delete');
-  $deleteLink.attr('href', '#');
+  $deleteLink.attr('href', 'http://localhost:3000/foods/listItem/'+fooditemid);
   $deleteLink.addClass('delete-link');
   $itemtitle.append($deleteLink);
   var $itemdescription = $('<p />');
@@ -406,6 +407,23 @@ function shareList(e){
     }).fail(function(header, code, err){
       console.log(header, code, err);
     })
+}
+
+//  ************* Delete List Item function
+
+function deleteListItem(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  var $link = $(this);
+  $.ajax({
+    url: $link.attr('href'),
+    method: 'DELETE',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+    }
+  }).done(function () {
+    $link.parent('div').remove();
+  })
 }
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
