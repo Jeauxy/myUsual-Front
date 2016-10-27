@@ -263,6 +263,11 @@ function loadFoodItem(item){
   $itemdiv.attr('class', 'list-food-item');
   var $itemtitle = $('<h3 />');
   $itemtitle.text(item.itemName);
+  var $deleteLink = $('<a />');
+  $deleteLink.text('Delete');
+  $deleteLink.attr('href', '#');
+  $deleteLink.addClass('delete-link');
+  $itemtitle.append($deleteLink);
   var $itemdescription = $('<p />');
   $itemdescription.text(item.description);
   var $itemdetails = $('<p />');
