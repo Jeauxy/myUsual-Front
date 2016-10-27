@@ -13,6 +13,7 @@ $(document).ready(function() {
 
   if (isLoggedIn()){
     loadLists();
+    loadStores();
     loadSharedLists();
     showProfile();
     $('#welcome').hide();
@@ -229,7 +230,6 @@ function loadList(list) {
 // *********** Load list information
 function loadListInfo(e){
   e.preventDefault();
-  loadStores();
   loadUsers();
   var listTitle = $(this).text();
   var listId = $(this).data('id');
