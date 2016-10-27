@@ -12,7 +12,13 @@
 <p>Alongside with those lists, someone has to get those lists to make sure they've not forgotten anything. But what if you or they forgot something on that list, wanted to change the list, or simply wanted to create a list on the fly while they're driving home from work? This can easily turn into a horrid and convoluted experience. No one wants to deal with multiple texts, notes, emails, etc of obtaining those changes or creations.</p>
 <br>
 <p>That's where <b><i>my</i>Usual</b> simplifies your life. <b><i>my</i>Usual</b> is THE sleek and simple way of creating, editing, and most importantly, sharing <b>YOUR USUAL</b> items and lists.</p>
-
+<br>
+<p>Below you will see the steps we've taken to create the app as well as a walkthrough of how to use it. We hope you enjoy myUsual and incorporate it into your grocery shopping lives.</p>
+<br>
+<br>
+<p>Questions, comments, concerns?
+<br>
+<p>Feel free to contact us at <a href="contact.myusual@gmail.com"></a></p>
 
 
 <h2>Technologies We used to build this app:</h2>
