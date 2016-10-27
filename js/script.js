@@ -27,7 +27,7 @@ $(document).ready(function() {
 
   $(document).on('click', 'button.list-group-item', loadListInfo);
   $(document).on('click', '.storeclick', selectStore);
-  $(document).on('click', 'a.deleteLink', deleteListItem);
+  $(document).on('click', 'a.delete-link', deleteListItem);
   $('#user-list-form').on('submit', shareList)
 });
 
@@ -266,7 +266,7 @@ function loadFoodItem(item){
   $itemtitle.text(item.itemName);
   var $deleteLink = $('<a />');
   $deleteLink.text('Delete');
-  $deleteLink.attr('href', 'http://localhost:3000/foods/listItem/'+fooditemid);
+  $deleteLink.attr('href', 'https://boiling-wildwood-13698.herokuapp.com/foods/'+fooditemid);
   $deleteLink.addClass('delete-link');
   $itemtitle.append($deleteLink);
   var $itemdescription = $('<p />');
@@ -418,6 +418,7 @@ function deleteListItem(e) {
   e.preventDefault();
   e.stopPropagation();
   var $link = $(this);
+  $link.parent('h3').parent('div').remove();
   $.ajax({
     url: $link.attr('href'),
     method: 'DELETE',
@@ -425,7 +426,8 @@ function deleteListItem(e) {
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
     }
   }).done(function () {
-    $link.parent('div').remove();
+    console.log("item removed");
+    //  $link.find('div').remove();
   })
 }
 // *********** Auth0 lock and login check
