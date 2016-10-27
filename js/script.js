@@ -249,6 +249,10 @@ function fetchFoodItems(listId){
       }
     }).done(function (data) {
       $('#list-content-items').empty();
+      // var pOwn = $('<p />');
+      // var pShare = $('<p />');
+      // pOwn.addClass('list-owners');
+      // pShare.addClass('list-owners');
       data.forEach(function (datum) {
         loadFoodItem(datum)
       })
@@ -399,7 +403,7 @@ function shareList(e){
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
       }
     }).done(function (data) {
-      console.log(data);
+      $("input.usercheckbox:checkbox").prop("checked", false)
     }).fail(function(header, code, err){
       console.log(header, code, err);
     })
