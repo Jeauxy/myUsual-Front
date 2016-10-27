@@ -27,6 +27,7 @@ $(document).ready(function() {
   $(document).on('click', 'button.list-group-item', loadListInfo);
   $(document).on('click', '.storeclick', selectStore);
   loadStores();
+  loadUsers();
 });
 
 // ********* Show profile information
@@ -250,13 +251,14 @@ function fetchFoodItems(listId){
       data.forEach(function (datum) {
         loadFoodItem(datum)
       })
-      addShareListOptions();
+      //addShareListOptions();
   })
 };
 
 function loadFoodItem(item){
   var fooditemid = item._id;
   var $itemdiv = $('<div />');
+  $itemdiv.attr('class', 'list-food-item');
   var $itemtitle = $('<h3 />');
   $itemtitle.text(item.itemName);
   var $itemdescription = $('<p />');
@@ -341,16 +343,40 @@ function submitFood(e){
 
 function selectStore(e){
   e.preventDefault();
-  //console.log($(this).parent().find('.storecheckbox').prop('checked', true));
   if ($(this).parent().find('.storecheckbox').is(':checked')){
-    // console.log('checked');
     $(this).parent().find('.storecheckbox').prop('checked', false);
   } else {
-    //console.log('not checked');
     $(this).parent().find('.storecheckbox').prop('checked', true);
   }
 };
+// ************ Load Users for sharing
+// *********** Load lists from Mongo
+function loadUsers() {
+  $.ajax({
+    url: 'https://boiling-wildwood-13698.herokuapp.com/users',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+      }
+    }).done(function (data) {
+      data.forEach(function (datum) {
+      loadUser(datum)
+    })
+  })
+};
 
+// *********** Load list item
+function loadUser(user) {
+    var p = $('<p />');
+    var input = $('<input type="checkbox" name="userlist" />');
+    input.attr('class', 'usercheckbox');
+    var label = $('<label />');
+    label.attr('class', 'userclick');
+    label.text(user.firstName + ' ' + user.lastName );
+    input.attr('value', user._id);
+    p.append(input);
+    p.append(label);
+    $('#users-list').append(p);
+};
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
 var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
