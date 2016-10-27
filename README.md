@@ -9,7 +9,13 @@
 
 <h2>Product Description<h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p> Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure thats a unanimous <b><i>YES!</i></b>.
+
+Everyone has grocery lists. Whether it be generic grocery lists, preferred foods/drinks lists, or special occasions lists, Everyone makes them.
+
+Alongside with those lists, someone has to get those lists to make sure they've not forgotten anything. But what if you or they forgot something on that list, wanted to change the list, or simply wanted to create a list on the fly while they're driving home from work? This can easily turn into a horrid and convoluted experience. No one wants to deal with multiple texts, notes, emails, etc of obtaining those changes or creations.
+
+That's where <b><i>my</i>Usual</b> simplifies your life. <b><i>my</i>Usual<b> is THE sleek and simple way of creating, editing, and most importantly, sharing <b>YOUR USUAL</b>items and lists.</p>
 
 
 
@@ -23,14 +29,8 @@
 <h4>-Atom</h4>
 <h4>-Sketch</h4>
 <h4>-Bootstrap</h4>
-<h4>Trello</h4>
+<h4>-Trello</h4>
 <h4>-Lots & LOTS of Starbucks</h4>
-
-
-
-<h2>User Stories</h2>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
 
 
@@ -81,6 +81,10 @@
 
 
 
-<h2>Trello</h2>
+<h2>User Stories</h2>
+
+<h3>Trello</h3>
+
+<p> </p>
 
 <a href="http://imgur.com/qMo3Xd4"><img src="http://i.imgur.com/qMo3Xd4.png" title="source: imgur.com" /></a>
