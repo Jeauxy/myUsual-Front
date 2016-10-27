@@ -403,7 +403,7 @@ function shareList(e){
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
       }
     }).done(function (data) {
-      $("input.usercheckbox:checkbox").prop("checked", false)
+      $("input.usercheckbox:checkbox").prop("checked", false);
     }).fail(function(header, code, err){
       console.log(header, code, err);
     })
