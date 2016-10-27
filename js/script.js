@@ -307,10 +307,8 @@ function submitFood(e){
     var store = $(this).val()
     associatedStores.push(store);
   });
-  //var associatedStores = $('#foodstoresubmit').val();
   var listId = [];
   listId.push($('h2#list-title').data('id'));
-  //console.log(listId);
   var theData = {
     itemName: $('#itemname').val(),
     description: $('#itemdescription').val(),
@@ -319,7 +317,6 @@ function submitFood(e){
     lists: listId,
     stores: associatedStores
   }
-  //console.log('theData', theData);
   $.ajax({
     url: 'https://boiling-wildwood-13698.herokuapp.com/foods',
     method: 'POST',
@@ -329,13 +326,11 @@ function submitFood(e){
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
     }
   }).done(function (data) {
-    //loadFood(data)
     loadFoodItem(data);
     $('#itemname').val("");
     $('#itemdescription').val("");
     $('#itemprice').val("");
     $('#quantitypurchased').val("");
-    //$('#foodstoresubmit').val("");
     $('.storecheckbox').prop('checked', false);
   }).fail(function(err, err1, err3){
     console.log(err, err1, err3);
@@ -367,26 +362,43 @@ function loadUsers() {
 
 // *********** Load User item
 function loadUser(user) {
-    var p = $('<p />');
-    var input = $('<input type="checkbox" name="userlist" />');
-    input.attr('class', 'usercheckbox');
-    var label = $('<label />');
-    label.attr('class', 'userclick');
-    label.text(user.firstName + ' ' + user.lastName );
-    input.attr('value', user._id);
-    p.append(input);
-    p.append(label);
-    $('#user-list-form').prepend(p);
+    var loggedInUser = $('#food-lists h2').data('userId');
+    if (user.userId !== loggedInUser) {
+      var p = $('<p />');
+      var input = $('<input type="checkbox" name="userlist" />');
+      input.attr('class', 'usercheckbox');
+      var label = $('<label />');
+      label.attr('class', 'userclick');
+      label.text(user.firstName + ' ' + user.lastName );
+      input.attr('value', user.userId);
+      p.append(input);
+      p.append(label);
+      $('#user-list-form').prepend(p);
+    } else {}
+
 };
 // *********** Share List functions
 function shareList(e){
   e.preventDefault();
+  var currentList = $('h2#list-title').data('id');
   var sharedUsers = [];
   $("input.usercheckbox:checkbox:checked").each(function(){
     var user = $(this).val()
     sharedUsers.push(user);
   });
   console.log(sharedUsers);
+  // $.ajax({
+  //   url: 'https://boiling-wildwood-13698.herokuapp.com/lists/' + currentList,
+  //   method: 'POST',
+  //
+  //   headers: {
+  //     'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+  //     }
+  //   }).done(function (data) {
+  //     data.forEach(function (datum) {
+  //     loadUser(datum)
+  //   })
+  // })
 }
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
