@@ -26,6 +26,7 @@ $(document).ready(function() {
 
   $(document).on('click', 'button.list-group-item', loadListInfo);
   $(document).on('click', '.storeclick', selectStore);
+  $(document).on('click', 'a.delete-link', deleteListItem);
   $('#user-list-form').on('submit', shareList)
 });
 
@@ -249,6 +250,10 @@ function fetchFoodItems(listId){
       }
     }).done(function (data) {
       $('#list-content-items').empty();
+      // var pOwn = $('<p />');
+      // var pShare = $('<p />');
+      // pOwn.addClass('list-owners');
+      // pShare.addClass('list-owners');
       data.forEach(function (datum) {
         loadFoodItem(datum)
       })
@@ -262,6 +267,11 @@ function loadFoodItem(item){
   $itemdiv.attr('class', 'list-food-item');
   var $itemtitle = $('<h3 />');
   $itemtitle.text(item.itemName);
+  var $deleteLink = $('<a />');
+  $deleteLink.text('Delete');
+  $deleteLink.attr('href', 'https://boiling-wildwood-13698.herokuapp.com/foods/'+fooditemid);
+  $deleteLink.addClass('delete-link');
+  $itemtitle.append($deleteLink);
   var $itemdescription = $('<p />');
   $itemdescription.text(item.description);
   var $itemdetails = $('<p />');
@@ -399,10 +409,29 @@ function shareList(e){
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
       }
     }).done(function (data) {
-      console.log(data);
+      $("input.usercheckbox:checkbox").prop("checked", false);
     }).fail(function(header, code, err){
       console.log(header, code, err);
     })
+}
+
+//  ************* Delete List Item function
+
+function deleteListItem(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  var $link = $(this);
+  $link.parent('h3').parent('div').remove();
+  $.ajax({
+    url: $link.attr('href'),
+    method: 'DELETE',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+    }
+  }).done(function () {
+    console.log("item removed");
+    //  $link.find('div').remove();
+  })
 }
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
