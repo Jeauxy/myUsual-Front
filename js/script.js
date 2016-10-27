@@ -387,18 +387,19 @@ function shareList(e){
     sharedUsers.push(user);
   });
   console.log(sharedUsers);
-  // $.ajax({
-  //   url: 'https://boiling-wildwood-13698.herokuapp.com/lists/' + currentList,
-  //   method: 'POST',
-  //
-  //   headers: {
-  //     'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-  //     }
-  //   }).done(function (data) {
-  //     data.forEach(function (datum) {
-  //     loadUser(datum)
-  //   })
-  // })
+  $.ajax({
+    url: 'https://boiling-wildwood-13698.herokuapp.com/lists/' + currentList,
+    method: 'PUT',
+    data: JSON.stringify(sharedUsers),
+    contentType: 'application/json',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+      }
+    }).done(function (data) {
+      console.log("cow");
+    }).fail(function(header, code, err){
+      console.log(header, code, err);
+    })
 }
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
