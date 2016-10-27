@@ -1,25 +1,19 @@
 # myUsual
 
 
-<h3>-Heroku Link-</h3>
-<a href="https://boiling-wildwood-13698.herokuapp.com/">myUsual</a>
+<h2>myUsual Homepage</h2>
 
-<h3>Problem(s) to solve:</h3>
+<a href="THIS WILL BE OUR WEBSITE LINK"</a>
+//
+//
+//
+<h2>Product Description<h2>
 
-<p></p>
-
-<p></p>
-
-
-<h3>How We solved the problem:</h3>
-<p><p>
-
-
-
-
-<h3>Technologies We used to build this app:</h3>
-
-
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+//
+//
+//
+<h2>Technologies We used to build this app:</h2>
 
 <h4>-Express.js</h4>
 <h4>-Node.js</h4>
@@ -29,25 +23,64 @@
 <h4>-Atom</h4>
 <h4>-Sketch</h4>
 <h4>-Bootstrap</h4>
-<h4>-Lots of Starbucks</h4>
+<h4>Trello</h4>
+<h4>-Lots & LOTS of Starbucks</h4>
+//
+//
+//
+<h2>User Stories</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+//
+//
+//
+<h2>Before and After</h2>
 
 
+<h3>OG Start</h3>
+
+<a href="http://imgur.com/2ufEvcE"><img src="http://i.imgur.com/2ufEvcE.jpg" title="source: imgur.com" /></a>
 
 
-<h3>Instructions on how to use app:</h3>
+<h3>Whiteboard Layout</h3>
+
+<a href="http://imgur.com/lJJCrZR"><img src="http://i.imgur.com/lJJCrZR.jpg" title="source: imgur.com" /></a>
 
 
-<h3>Wireframes:</h3>
+<h3>Final Product</h3>
 
+<h4>Login Page</h4>
 
-<h2>Main App Page</h2>
+<a href="http://imgur.com/PA0V7Vr"><img src="http://i.imgur.com/PA0V7Vr.png?1" title="source: imgur.com" /></a>
 
-<a href="http://imgur.com/Rv35pgP"><img src="http://i.imgur.com/Rv35pgP.png" title="source: imgur.com" /></a>
+<h4>Main App Page</h4>
 
-<h2>Login Page</h2>
+<a href="http://imgur.com/MFolMW2"><img src="http://i.imgur.com/MFolMW2.png" title="source: imgur.com" /></a>
+//
+//
+//
+<h2>We're Responsive Too!</h2>
+
+<a href="http://imgur.com/vo0L430"><img src="http://i.imgur.com/vo0L430.png" title="source: imgur.com" /></a>
+//
+//
+//
+<h2>Wireframes:</h2>
+
+<h3>Login Page:</h3>
 
 <a href="http://imgur.com/qis1Pfg"><img src="http://i.imgur.com/qis1Pfg.png" title="source: imgur.com" /></a>
 
-<h2>Auth0 Login/User Create Page</h2>
+<h3>Auth0 Login/User Create Page:</h3>
 
 <a href="http://imgur.com/AskVwn5"><img src="http://i.imgur.com/AskVwn5.png" title="source: imgur.com" /></a>
+
+<h3>Main App Page:</h3>
+
+<a href="http://imgur.com/Rv35pgP"><img src="http://i.imgur.com/Rv35pgP.png" title="source: imgur.com" /></a>
+//
+//
+//
+<h2>Trello</h2>
+
+<a href="http://imgur.com/qMo3Xd4"><img src="http://i.imgur.com/qMo3Xd4.png" title="source: imgur.com" /></a>
