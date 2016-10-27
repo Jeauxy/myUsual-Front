@@ -2,7 +2,6 @@
 
 
 <h2>Product Website</h2>
-<br>
 <a href="https://jeauxy.github.io/myUsual-Front/">myUsual</a>
 
 <h2><b>Product Description:</b><h2>
@@ -23,8 +22,8 @@
 <br>
 Feel free to contact us via:
 <br>
-<br> 
-<contact.myusual@gmail.com>
+<br>
+<p><contact.myusual@gmail.com></p>
 <br>
 <br>
 <h2><b>Technologies We used to build this app:</b></h2>
