@@ -17,11 +17,10 @@
 <p>Below you will see the steps we've taken to create the app as well as a walkthrough of how to use it. We hope you enjoy <b><i>my</i>Usual</b> and incorporate it into your grocery shopping lives.</p>
 <br>
 <br>
-<p>Questions, comments, concerns?
+<h2>Questions, comments, concerns?</h2>
 <br>
 <br>
-Feel free to contact us via:
-<br>
+<p>Feel free to contact us via:</p>
 <p>contact.myusual@gmail.com</p>
 <br>
 <br>
