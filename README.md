@@ -3,9 +3,9 @@
 
 <h2>myUsual Homepage</h2>
 
-<h2>Product Description:<h2>
+<h2><b>Product Description:</b><h2>
 
-<p> Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure thats a unanimous <b><i>YES!</i></b>.</p>
+<p>Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure thats a unanimous <b><i>YES!</i></b>.</p>
 <br>
 <p>Everyone has grocery lists. Whether it be generic grocery lists, preferred foods/drinks lists, or special occasions lists. Everyone makes them.</p>
 <br>
@@ -13,15 +13,16 @@
 <br>
 <p>That's where <b><i>my</i>Usual</b> simplifies your life. <b><i>my</i>Usual</b> is THE sleek and simple way of creating, editing, and most importantly, sharing <b>YOUR USUAL</b> items and lists.</p>
 <br>
-<p>Below you will see the steps we've taken to create the app as well as a walkthrough of how to use it. We hope you enjoy myUsual and incorporate it into your grocery shopping lives.</p>
+<p>Below you will see the steps we've taken to create the app as well as a walkthrough of how to use it. We hope you enjoy <b><i>my</i>Usual</b> and incorporate it into your grocery shopping lives.</p>
 <br>
 <br>
 <p>Questions, comments, concerns?
 <br>
-<p>Feel free to contact us via: [email us](mailto:contact.myusual@gmail.com)</p>
+<br>
+<p>Feel free to contact us via: [contact.myusual@gmail.com](mailto:)</p>
 
 
-<h2>Technologies We used to build this app:</h2>
+<h2><b>Technologies We used to build this app:</b></h2>
 
 <h4>-Express.js</h4>
 <h4>-Node.js</h4>
@@ -36,7 +37,7 @@
 
 
 
-<h2>Before and After:</h2>
+<h2><b>Before and After:</b></h2>
 
 
 <h3>OG Start</h3>
@@ -61,13 +62,13 @@
 
 
 
-<h2>We're Responsive Too!</h2>
+<h2><b>We're Responsive Too!</b></h2>
 
 <a href="http://imgur.com/vo0L430"><img src="http://i.imgur.com/vo0L430.png" title="source: imgur.com" /></a>
 
 
 
-<h2>Wireframes:</h2>
+<h2></b>Wireframes:</b></h2>
 
 <h3>Login Page:</h3>
 
@@ -83,7 +84,7 @@
 
 
 
-<h2>User Stories:</h2>
+<h2><b>User Stories:</b></h2>
 
 <h3>Trello</h3>
 
