@@ -1,29 +1,4 @@
-.row{
-  background-color: white;
-}
-
-.row div{
-  background-color: white;
-}
-
-.bordernone{
-  border: 0px;
-}
-.col-md-6{
-  border-left: solid #dedede 1px;
-  border-right: solid #dedede 1px;
-}
-#nav{
-  margin-bottom: 0;
-  background: rgba(255,255,255,.1);
-}
-.bold{
-  font-weight: bold;
-}
-.space{
-  margin: 0px 10px;
-}
-body {
+body{
   text-align: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -36,57 +11,39 @@ h2{
   font-size: 40px;
 }
 
-#list-title{
-  text-align: center;
-  color: #13487A;
-}
-
-#header-color{
-  color: #13487A;
-}
-#list-content-items{
-  text-align: left;
-}
-#foodstoresubmit{
-  display: inline-block;
-  width: 150px;
-  text-align: left;
-}
-#foodstoresubmit p input{
-  margin-right: 20px;
-}
-#input-button{
-  background: #13487A;
-  color: white;
-  border-radius: 5px;
-}
-
-#welcome{
-  font-size: 40px;
-  padding-top: 40px;
+.bold{
   font-weight: bold;
+}
+
+.bordernone{
+  border: 0px;
+}
+.col-md-6{
+  border-left: solid #dedede 1px;
+  border-right: solid #dedede 1px;
+}
+
+.row{
+  background-color: white;
+}
+
+.row div{
+  background-color: white;
+}
+
+.space{
+  margin: 0px 10px;
 }
 
 #blank{
   display: block;
   position: relative;
   width: 600px;
-  height: 125px;
+  height: 60px;
 }
 
-#logout{
-  margin-top: 1px;
-  margin-right: 2px;
-  position:absolute;
-  top:0;
-  right:0;
-  color: black;
-  float: right;
-}
-
-#lists {
-  background:rgba(255,255,255,0.1);
-  text-align: left;
+#btn-login{
+  background: #43ABEA;
 }
 
 #button{
@@ -94,18 +51,14 @@ h2{
   padding-top: 25px;
 }
 
-#title{
-  color: #43ABEA;
-  font-weight: bolder;
-  text-align: center;
+#foodstoresubmit{
+  display: inline-block;
+  width: 150px;
+  text-align: left;
 }
 
-#btn-login{
-  background: #43ABEA;
-}
-
-#listsubmit{
-  background: #43ABEA;
+#foodstoresubmit p input{
+  margin-right: 20px;
 }
 
 #fooditemsubmit{
@@ -116,7 +69,71 @@ h2{
   text-align: center;
 }
 
+#footer{
+
+}
+
+#footer-content{
+  color: white;
+  padding-bottom: 15px;
+}
+
+#header-color{
+  color: #13487A;
+}
+
+#input-button{
+  background: #13487A;
+  color: white;
+  border-radius: 5px;
+}
+
+#lists{
+  background:rgba(255,255,255,0.1);
+  text-align: left;
+}
+
+#list-title{
+  text-align: center;
+  color: #13487A;
+}
+
+#list-content-items{
+  text-align: left;
+}
+
+#listsubmit{
+  background: #43ABEA;
+}
+
 #logout{
   display: inline-block;
   align: right;
+  margin-top: 1px;
+  margin-right: 2px;
+  position:absolute;
+  top:0;
+  right:0;
+  float: right;
+}
+
+#main{
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+#nav{
+  margin-bottom: 0;
+  background: rgba(255,255,255,.1);
+}
+
+#title{
+  color: #43ABEA;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 50px;
+}
+
+#welcome{
+  padding-top: 85px;
 }
