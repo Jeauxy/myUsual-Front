@@ -147,6 +147,30 @@ function addNewList(e) {
     }
 };
 
+
+// *********** Load lists from Mongo
+function loadLists() {
+  $.ajax({
+    url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
+    headers: {
+      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
+      }
+    }).done(function (data) {
+      data.forEach(function (datum) {
+      loadList(datum)
+    })
+  })
+};
+// *********** Load list item
+function loadList(list) {
+  //console.log(list);
+    var button = $('<button />');
+    button.text(list.listName);
+    button.attr('class', 'list-group-item')
+    button.data('id', list._id);
+    $('#lists').append(button);
+};
+
 // ************ Load Shared lists
 function loadSharedLists() {
     $.ajax({
@@ -173,28 +197,6 @@ function loadSharedList(list) {
   $('#sharedLists').append(button);
 }
 
-// *********** Load lists from Mongo
-function loadLists() {
-  $.ajax({
-    url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
-    headers: {
-      'Authorization': 'Bearer ' + localStorage.getItem('idToken')
-      }
-    }).done(function (data) {
-      data.forEach(function (datum) {
-      loadList(datum)
-    })
-  })
-};
-// *********** Load list item
-function loadList(list) {
-  //console.log(list);
-    var button = $('<button />');
-    button.text(list.listName);
-    button.attr('class', 'list-group-item')
-    button.data('id', list._id);
-    $('#lists').append(button);
-};
 // *********** Load list information
 function loadListInfo(e){
   e.preventDefault();
