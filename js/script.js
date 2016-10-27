@@ -14,7 +14,7 @@ $(document).ready(function() {
   if (isLoggedIn()){
     loadLists();
     showProfile();
-
+    loadSharedLists();
     $('#welcome').hide();
     $('#home').hide();
     $('#blank').hide();
