@@ -27,8 +27,6 @@ $(document).ready(function() {
   $(document).on('click', 'button.list-group-item', loadListInfo);
   $(document).on('click', '.storeclick', selectStore);
   $('#user-list-form').on('submit', shareList)
-  loadStores();
-  loadUsers();
 });
 
 // ********* Show profile information
@@ -230,6 +228,8 @@ function loadList(list) {
 // *********** Load list information
 function loadListInfo(e){
   e.preventDefault();
+  loadStores();
+  loadUsers();
   var listTitle = $(this).text();
   var listId = $(this).data('id');
   $('#new-food').removeClass('hidden');
@@ -303,8 +303,8 @@ function fetchStoreName(storeId, paragraphid){
 function submitFood(e){
   e.preventDefault();
   var associatedStores = [];
-  $("input:checkbox:checked").each(function(){
-    var store = $(this).val()
+  $(".storecheckbox:checkbox:checked").each(function(){
+    var store = $(this).val();
     associatedStores.push(store);
   });
   var listId = [];
@@ -348,6 +348,7 @@ function selectStore(e){
 // ************ Load Users for sharing
 // *********** Load lists from Mongo
 function loadUsers() {
+  $('#user-list-form').find('.user-check-paragraph').remove();
   $.ajax({
     url: 'https://boiling-wildwood-13698.herokuapp.com/users',
     headers: {
@@ -365,6 +366,7 @@ function loadUser(user) {
     var loggedInUser = $('#food-lists h2').data('userId');
     if (user.userId !== loggedInUser) {
       var p = $('<p />');
+      p.attr('class', 'user-check-paragraph');
       var input = $('<input type="checkbox" name="userlist" />');
       input.attr('class', 'usercheckbox');
       var label = $('<label />');
@@ -387,16 +389,17 @@ function shareList(e){
     sharedUsers.push(user);
   });
   console.log(sharedUsers);
+  var theData = {sharedOwners: sharedUsers};
   $.ajax({
     url: 'https://boiling-wildwood-13698.herokuapp.com/lists/' + currentList,
     method: 'PUT',
-    data: JSON.stringify(sharedUsers),
+    data: JSON.stringify(theData),
     contentType: 'application/json',
     headers: {
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
       }
     }).done(function (data) {
-      console.log("cow");
+      console.log(data);
     }).fail(function(header, code, err){
       console.log(header, code, err);
     })
