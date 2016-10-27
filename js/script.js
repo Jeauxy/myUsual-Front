@@ -15,7 +15,7 @@ $(document).ready(function() {
     loadLists();
     loadSharedLists();
     showProfile();
-
+    loadSharedLists();
     $('#welcome').hide();
     $('#home').hide();
     $('#blank').hide();
