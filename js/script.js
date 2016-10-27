@@ -47,7 +47,7 @@ function showProfile() {
     } else {
       //console.log('profile', profile);
       //  ajaxCheck(profile);
-      $('#fullName').text(profile.given_name);
+      $('#firstName').text("Welcome " + profile.given_name);
       $('#food-lists h2').data('userId', profile.user_id)
     }
   })
