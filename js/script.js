@@ -13,6 +13,7 @@ $(document).ready(function() {
 
   if (isLoggedIn()){
     loadLists();
+    loadSharedLists();
     showProfile();
 
     $('#welcome').hide();
