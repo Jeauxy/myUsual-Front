@@ -1,4 +1,4 @@
-body {
+body{
   text-align: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -88,7 +88,7 @@ h2{
   border-radius: 5px;
 }
 
-#lists {
+#lists{
   background:rgba(255,255,255,0.1);
   text-align: left;
 }
@@ -132,4 +132,8 @@ h2{
   font-weight: bolder;
   text-align: center;
   font-size: 50px;
+}
+
+#welcome{
+  padding-top: 85px;
 }
