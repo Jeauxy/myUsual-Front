@@ -476,5 +476,5 @@ lock.on('authenticated', function (authResult) {
 
 function logout() {
   localStorage.removeItem('idToken')
-  window.location.href = '/jeauxy.github.io/myUsual-Front/';
+  window.location.href = '/myUsual-Front/';
 };
