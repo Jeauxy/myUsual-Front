@@ -19,7 +19,7 @@
 <p>Questions, comments, concerns?
 <br>
 <br>
-<p>Feel free to contact us via: [contact.myusual@gmail.com](mailto:)</p>
+Feel free to contact us via: [contact.myusual@gmail.com](mailto:)
 
 
 <h2><b>Technologies We used to build this app:</b></h2>
