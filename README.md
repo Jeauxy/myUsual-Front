@@ -22,7 +22,6 @@
 <br>
 Feel free to contact us via:
 <br>
-<br>
 <p>contact.myusual@gmail.com</p>
 <br>
 <br>
