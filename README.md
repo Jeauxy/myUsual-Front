@@ -6,7 +6,7 @@
 
 <h2><b>Product Description</b><h2>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure that's a unanimous <b><i>YES!</i></b></p>
+<p>Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure that's a unanimous <b><i>YES!</i></b></p>
 <br>
 <p>Everyone has grocery lists. Whether it be generic grocery lists, preferred foods/drinks lists, or special occasions lists. Everyone makes them.</p>
 <br>
