@@ -10,12 +10,11 @@ $(document).ready(function() {
   e.preventDefault();
   logout();
 });
-
   if (isLoggedIn()){
     loadLists();
-    loadStores();
     loadSharedLists();
     showProfile();
+    loadStores();
     $('#welcome').hide();
     $('#home').hide();
     $('#blank').hide();
@@ -24,11 +23,11 @@ $(document).ready(function() {
   }
   $('#new-list-form').on('submit', addNewList);
   $('#foodItemForm').on('submit', submitFood);
-
   $(document).on('click', 'button.list-group-item', loadListInfo);
   $(document).on('click', '.storeclick', selectStore);
   $(document).on('click', 'a.delete-link', deleteListItem);
-  $('#user-list-form').on('submit', shareList)
+  $('#user-list-form').on('submit', shareList);
+
 });
 
 // ********* Show profile information
@@ -67,6 +66,7 @@ function ajaxCheck(authResult) {
         console.log("user already in db");
         loadLists();
         loadSharedLists();
+        loadStores();
       }).fail(function () {
         console.log("user now added to db");
         addUserToDb(profile);
@@ -110,6 +110,7 @@ function loadStores() {
     //$('#foodstoresubmit').attr('size', optionsize)
     //console.log(optionsize);
     data.forEach(function (datum) {
+      console.log("stores");
       loadStore(datum)
     })
   })
