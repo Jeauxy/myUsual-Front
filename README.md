@@ -24,14 +24,14 @@
 <br>
 <h2><b>Technologies We used to build this app:</b></h2>
 
-<h4>- Express.js</h4>
-<h4>- Node.js</h4>
+<h4>- Atom</h4>
 <h4>- Auth0</h4>
+<h4>- Bootstrap</h4>
+<h4>- Express.js</h4>
 <h4>- Heroku</h4>
 <h4>- MongoDB</h4>
-<h4>- Atom</h4>
+<h4>- Node.js</h4>
 <h4>- Sketch</h4>
-<h4>- Bootstrap</h4>
 <h4>- Trello</h4>
 <h4>- Lots & LOTS of Starbucks</h4>
 <br>
