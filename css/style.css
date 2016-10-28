@@ -16,36 +16,43 @@ h2{
 }
 
 .bordernone{
-  border: 0px;
+  border: 0;
 }
+
 .col-md-6{
   border-left: solid #dedede 1px;
   border-right: solid #dedede 1px;
 }
+
+.delete-link{
+  padding-top: 8px;
+}
+
 .list-food-item{
   border-bottom: solid #dedede 1px;
 }
+
 .list-food-item:last-of-type{
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 
 .list-food-item .delete-link{
-  margin: 0px 0px 10px 20px;
+  margin: 0 0 10px 20px;
   font-size: 12px;
   float: right;
   color: #990000;
 }
 
 .row{
-  background-color: white;
+  background-color: #fff;
 }
 
 .row div{
-  background-color: white;
+  background-color: #fff;
 }
 
 .space{
-  margin: 0px 10px;
+  margin: 0 10px;
 }
 
 #blank{
@@ -69,13 +76,6 @@ h2{
   width: 150px;
   text-align: left;
 }
-#listsharecontent, #users-list{
-  padding: 10px;
-}
-#listsharecontent{
-  border: solid #dedede 1px;
-  text-align: left;
-}
 
 #foodstoresubmit p input, #user-list-form p input{
   margin-right: 20px;
@@ -89,26 +89,22 @@ h2{
   text-align: center;
 }
 
-#footer{
-
-}
-
 #footer-content{
-  color: white;
+  color: #fff;
   text-align: center;
 }
 
 #firstName{
-  color: white;
+  color: #fff;
   display: inline-block;
   align: right;
   margin-top: 1px;
   margin-right: 2px;
-  position:absolute;
-  top:0;
-  right:0;
+  position: absolute;
+  top: 0;
+  right: 0;
   float: right;
-  padding: 5px 80px 0px 0px;
+  padding: 5px 80px 0 0;
 }
 
 #header-color{
@@ -117,12 +113,12 @@ h2{
 
 #input-button{
   background: #13487A;
-  color: white;
+  color: #fff;
   border-radius: 5px;
 }
 
 #lists{
-  background:rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.1);
   text-align: left;
 }
 
@@ -135,6 +131,15 @@ h2{
   text-align: left;
 }
 
+#listsharecontent, #users-list{
+  padding: 10px;
+}
+
+#listsharecontent{
+  border: solid #dedede 1px;
+  text-align: left;
+}
+
 #listsubmit, #btn-share{
   background: #43ABEA;
 }
@@ -144,9 +149,9 @@ h2{
   align: right;
   margin-top: 1px;
   margin-right: 2px;
-  position:absolute;
-  top:0;
-  right:0;
+  position: absolute;
+  top: 0;
+  right: 0;
   float: right;
 }
 
