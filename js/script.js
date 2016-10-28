@@ -435,7 +435,12 @@ function deleteListItem(e) {
 }
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
-var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', {
+
+var options = {
+  allowedConnections: ['google-oauth2', 'facebook', 'linkedin']
+};
+
+var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com', options, {
     auth: {
       params: {
         scope: 'openid email'
