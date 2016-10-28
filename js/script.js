@@ -1,16 +1,16 @@
 $(document).ready(function() {
 
   $('#btn-login').on('click', function (e) {
-  e.preventDefault();
-  lock.show();
-});
+    e.preventDefault();
+    lock.show();
+  });
 
   $('#logout').on('click', function (e) {
-  console.log('clicked');
-  e.preventDefault();
-  logout();
-});
-  if (isLoggedIn()){
+    //console.log('clicked');
+    e.preventDefault();
+    logout();
+  });
+  if (isLoggedIn()) {
     loadLists();
     loadSharedLists();
     showProfile();
@@ -27,7 +27,6 @@ $(document).ready(function() {
   $(document).on('click', '.storeclick', selectStore);
   $(document).on('click', 'a.delete-link', deleteListItem);
   $('#user-list-form').on('submit', shareList);
-
 });
 
 // ********* Show profile information
@@ -59,16 +58,16 @@ function ajaxCheck(authResult) {
     if (error) {
       logout();
     } else {
-      console.log(authResult);
+      //console.log(authResult);
       $.ajax({
         url: 'https://boiling-wildwood-13698.herokuapp.com/users/'+profile.user_id
       }).done(function () {
-        console.log("user already in db");
+        //console.log("user already in db");
         loadLists();
         loadSharedLists();
         loadStores();
       }).fail(function () {
-        console.log("user now added to db");
+        //console.log("user now added to db");
         addUserToDb(profile);
         loadLists();
       })
@@ -92,7 +91,7 @@ function addUserToDb(profile) {
   }
 }
   $.ajax(options).done(function () {
-    console.log("added user to db");
+    //console.log("added user to db");
   }).fail(function (err) {
     console.log(err);
   })
@@ -107,10 +106,7 @@ function loadStores() {
       }
     }).done(function (data) {
     var optionsize = data.length;
-    //$('#foodstoresubmit').attr('size', optionsize)
-    //console.log(optionsize);
     data.forEach(function (datum) {
-      console.log("stores");
       loadStore(datum)
     })
   })
@@ -134,7 +130,6 @@ function loadStore(stores) {
 function addNewList(e) {
     e.preventDefault()
     var listName = $('#list-name').val();
-    //console.log(listName);
     if (listName !== '') {
       $.ajax({
         url: 'https://boiling-wildwood-13698.herokuapp.com/lists',
@@ -147,8 +142,8 @@ function addNewList(e) {
           listOwner: $('#food-lists h2').data('userId')
           }
         }).done(function (newList) {
-        loadList(newList)
-        $('#list-name').val('').focus()
+        loadList(newList);
+        $('#list-name').val('').focus();
         })
     } else {
       console.log("empty");
@@ -164,7 +159,7 @@ function loadLists() {
       }
     }).done(function (data) {
       data.forEach(function (datum) {
-      loadList(datum)
+        loadList(datum)
     })
   })
 };
@@ -187,7 +182,6 @@ function loadSharedLists() {
       'Authorization': 'Bearer ' + localStorage.getItem('idToken')
     }
   }).done(function (data) {
-    console.log(data);
     data.forEach(function (datum) {
       loadSharedList(datum)
     })
@@ -251,14 +245,9 @@ function fetchFoodItems(listId){
       }
     }).done(function (data) {
       $('#list-content-items').empty();
-      // var pOwn = $('<p />');
-      // var pShare = $('<p />');
-      // pOwn.addClass('list-owners');
-      // pShare.addClass('list-owners');
       data.forEach(function (datum) {
         loadFoodItem(datum)
       })
-      //addShareListOptions();
   })
 };
 
@@ -279,7 +268,6 @@ function loadFoodItem(item){
   $itemdetails.html('<span class = "bold">Desired price:</span> $' + item.price + '<span class="space"> </span>' + '<span class = "bold">Number needed:</span> ' + item.avgQuantityPurchased);
   var $itemstorestring = $('<p />')
   $itemstorestring.attr('id', fooditemid);
-  //$itemstorestring.text('laksdfkasdf');
   $itemdiv.append($itemtitle);
   $itemdiv.append($itemdescription);
   $itemdiv.append($itemdetails);
@@ -305,7 +293,6 @@ function fetchStoreName(storeId, paragraphid){
       } else {
         storedisplay = storedisplay + ", " + storaname;
       }
-
       $('#' + paragraphid).text(storedisplay)
     })
 };
@@ -367,7 +354,7 @@ function loadUsers() {
       }
     }).done(function (data) {
       data.forEach(function (datum) {
-      loadUser(datum)
+        loadUser(datum)
     })
   })
 };
@@ -451,7 +438,6 @@ var lock = new Auth0Lock('GoBNjyrd7W9Jg1HECE7nH82QUhjTsM2B', 'jeauxy.auth0.com',
 function isLoggedIn() {
   var token = localStorage.getItem('idToken')
   var expired = isJwtValid(token);
-
   if (token) {
     return true;
   } else {
