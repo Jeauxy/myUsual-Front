@@ -1,12 +1,12 @@
-# myUsual
+# <i>my</i>Usual
 
 
 <h2><b>Product Website</b></h2>
-<h2><a href="https://jeauxy.github.io/myUsual-Front/">myUsual</a></h2>
+<h2><a href="https://jeauxy.github.io/myUsual-Front/"><i>my</i>Usual</a></h2>
 
 <h2><b>Product Description</b><h2>
 
-<p>Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure that's a unanimous <b><i>YES!</i></b></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure that's a unanimous <b><i>YES!</i></b></p>
 <br>
 <p>Everyone has grocery lists. Whether it be generic grocery lists, preferred foods/drinks lists, or special occasions lists. Everyone makes them.</p>
 <br>
@@ -16,7 +16,7 @@
 <br>
 <p>Below you will see the steps we've taken to create the app as well as a walkthrough of how to use it. We hope you enjoy <b><i>my</i>Usual</b> and incorporate it into your grocery shopping lives.</p>
 <br>
-<h3>Questions, comments, concerns?
+<h3><b>Questions, comments, concerns?</b>
 <br>
 <br>
 <p>Feel free to contact us via:</p>
@@ -52,26 +52,26 @@
 <h2><b>Wireframes:</b></h2>
 
 
-<h3>Login Page:</h3>
+<h3>Login Page</h3>
 
 <a href="http://imgur.com/qis1Pfg"><img src="http://i.imgur.com/qis1Pfg.png" title="source: imgur.com" /></a>
 
-<h3>Auth0 Login Page:</h3>
+<h3>Auth0 Login Page</h3>
 
 <a href="http://imgur.com/AskVwn5"><img src="http://i.imgur.com/AskVwn5.png" title="source: imgur.com" /></a>
 
-<h3>Main App Page:</h3>
+<h3>Main App Page</h3>
 
 <a href="http://imgur.com/Rv35pgP"><img src="http://i.imgur.com/Rv35pgP.png" title="source: imgur.com" /></a>
 <br>
 <br>
-<h2><b>Final Product</b></h2>
+<h2><b>Final Product:</b></h2>
 
-<h3>Login Page:</h3>
+<h3>Login Page</h3>
 
 <a href="http://imgur.com/PA0V7Vr"><img src="http://i.imgur.com/PA0V7Vr.png?1" title="source: imgur.com" /></a>
 
-<h3>Auth0 Login Page:</h3>
+<h3>Auth0 Login Page</h3>
 
 <a href="http://imgur.com/t5WMYsP"><img src="http://i.imgur.com/t5WMYsP.png" title="source: imgur.com" /></a>
 
@@ -92,4 +92,4 @@
 
 <h3>Trello</h3>
 
-<a href="http://imgur.com/qMo3Xd4"><img src="http://i.imgur.com/qMo3Xd4.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/q5Fx6Ls"><img src="http://i.imgur.com/q5Fx6Ls.png" title="source: imgur.com" /></a>
