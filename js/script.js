@@ -435,7 +435,6 @@ function deleteListItem(e) {
 }
 // *********** Auth0 lock and login check
 //1. Client ID, 2. Client Domain, 3. Oject of Attr
-
 var options = {
   allowedConnections: ['google-oauth2', 'facebook', 'linkedin']
 };
