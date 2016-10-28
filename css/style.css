@@ -156,8 +156,13 @@ h2{
 }
 
 #main{
+<<<<<<< Updated upstream
   padding-top: 30px;
   padding-bottom: 20px;
+=======
+  padding-top: 35px;
+  padding-bottom: 25px;
+>>>>>>> Stashed changes
 }
 
 #nav{
