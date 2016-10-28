@@ -2,7 +2,7 @@
 
 
 <h2>Product Website</h2>
-<a href="https://jeauxy.github.io/myUsual-Front/">myUsual</a>
+<h2><a href="https://jeauxy.github.io/myUsual-Front/">myUsual</a></h2>
 
 <h2><b>Product Description:</b><h2>
 
@@ -16,8 +16,7 @@
 <br>
 <p>Below you will see the steps we've taken to create the app as well as a walkthrough of how to use it. We hope you enjoy <b><i>my</i>Usual</b> and incorporate it into your grocery shopping lives.</p>
 <br>
-<br>
-<h2>Questions, comments, concerns?</h2>
+<h3>Questions, comments, concerns?
 <br>
 <br>
 <p>Feel free to contact us via:</p>
@@ -52,11 +51,12 @@
 
 <h2><b>Wireframes:</b></h2>
 
+
 <h3>Login Page:</h3>
 
 <a href="http://imgur.com/qis1Pfg"><img src="http://i.imgur.com/qis1Pfg.png" title="source: imgur.com" /></a>
 
-<h3>Auth0 Login/User Create Page:</h3>
+<h3>Auth0 Login Page:</h3>
 
 <a href="http://imgur.com/AskVwn5"><img src="http://i.imgur.com/AskVwn5.png" title="source: imgur.com" /></a>
 
@@ -67,9 +67,13 @@
 <br>
 <h2><b>Final Product</b></h2>
 
-<h3>Login Page</h3>
+<h3>Login Page:</h3>
 
 <a href="http://imgur.com/PA0V7Vr"><img src="http://i.imgur.com/PA0V7Vr.png?1" title="source: imgur.com" /></a>
+
+<h3>Auth0 Login Page:</h3>
+
+<a href="http://imgur.com/t5WMYsP"><img src="http://i.imgur.com/t5WMYsP.png" title="source: imgur.com" /></a>
 
 <h3>Main App Page</h3>
 
@@ -82,10 +86,10 @@
 <br>
 <a href="http://imgur.com/OZfvu6k"><img src="http://i.imgur.com/OZfvu6k.jpg" title="source: imgur.com" /></a>
 <br>
-<br
+<br>
 <h2><b>User Stories:</b></h2>
 
-<h3>Trello</h3>
 
+<h3>Trello</h3>
 
 <a href="http://imgur.com/qMo3Xd4"><img src="http://i.imgur.com/qMo3Xd4.png" title="source: imgur.com" /></a>
