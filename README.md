@@ -23,7 +23,6 @@
 <p>Feel free to contact us via:</p>
 <p>contact.myusual@gmail.com</p>
 <br>
-<br>
 <h2><b>Technologies We used to build this app:</b></h2>
 
 <h4>- Express.js</h4>
