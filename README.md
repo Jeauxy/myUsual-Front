@@ -8,7 +8,7 @@
 
 <p>Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure that's a unanimous <b><i>YES!</i></b></p>
 <br>
-<p>Everyone has grocery lists. Whether it be generic grocery lists, preferred foods/drinks lists, or special occasions lists. Everyone makes them.</p>
+<p>Everyone has grocery lists. Whether it be generic grocery lists, preferred foods/drinks lists, or special occasions lists...Everyone makes them.</p>
 <br>
 <p>Alongside with those lists, someone has to get those lists to make sure they've not forgotten anything. But what if you or they forgot something on that list, wanted to change the list, or simply wanted to create a list on the fly while they're driving home from work? This can easily turn into a horrid and convoluted experience. No one wants to deal with multiple texts, notes, emails, etc of obtaining those changes or creations.</p>
 <br>
