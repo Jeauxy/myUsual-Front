@@ -90,10 +90,11 @@
                   <input type="text" id="itemdescription" name="itemdescription" value="" placeholder="Item Description">
                 </p>
                 <p>
-                  <input type="text" id="itemprice" name="itemprice" value="" placeholder="Desired Price">
+                  $<input type="number" id="itemprice" name="itemprice" value="" placeholder="Desired Price">
                 </p>
                 <p>
-                  <input type="text" id="quantitypurchased" name="quantitypurchased" value="" placeholder="Quantity Needed">
+                  <input type="number" id="quantitypurchased" name="quantitypurchased" value="" placeholder="Quantity Needed">
+                  <!-- ^^ This needs to demand a number instead of a string. String breaks code. -->
                 </p>
                 <div id="foodstoresubmit">
 
