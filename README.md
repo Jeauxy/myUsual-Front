@@ -6,6 +6,8 @@
 
 <h2><b>MyUsual-Back GitHub Code Repo</b></h2>
 
+<a href="https://github.com/Jeauxy/myUsual-Back"</a>
+
 <h2><b>Product Description</b><h2>
 
 <p>Have you and your better half, roommate, or acquaintance ever needed to go to your local grocery store and had a myriad of items or better yet, <i>SPECIFIC</i> items you needed? We're sure that's a unanimous <b><i>YES!</i></b></p>
