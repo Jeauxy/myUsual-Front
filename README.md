@@ -5,7 +5,7 @@
 <h2><a href="https://jeauxy.github.io/myUsual-Front/"><i>my</i>Usual</a></h2>
 
 <h2><b>MyUsual-Back End</b></h2>
-<h2><a href="https://github.com/Jeauxy/myUsual-Back">GitHub Code Link</a></h2>
+<h2><a href="https://github.com/Jeauxy/myUsual-Back">GitHub Back-End Code</a></h2>
 
 <h2><b>Product Description</b><h2>
 
