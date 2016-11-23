@@ -2,10 +2,10 @@
 
 
 <h2><b>Product Website</b></h2>
-<h2><a href="https://jeauxy.github.io/myUsual-Front/"><i>my</i>Usual</a></h2>
+<h2><a href="https://jeauxy.github.io/myUsual-Front/" target=_blank><i>my</i>Usual</a></h2>
 
 <h2><b>MyUsual-Back End</b></h2>
-<h2><a href="https://github.com/Jeauxy/myUsual-Back">GitHub Back-End Code</a></h2>
+<h2><a href="https://github.com/Jeauxy/myUsual-Back" target=_blank>GitHub Back-End Code</a></h2>
 
 <h2><b>Product Description</b><h2>
 
